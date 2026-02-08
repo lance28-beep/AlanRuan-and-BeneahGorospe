@@ -50,7 +50,7 @@ const storyEvents = [
     memories: "Just like the company they belong to — Perennial, a name that speaks of forever — their love is a promise that no matter the season, it will always return, always grow, always stay. And as their teammates watched, they bore witness to something rare: a romance rooted in friendship, nurtured by time, and destined to endure. #BohoLoveGoodbye #And I will take whatever you can give",
     year: "2019",
     month: "June",
-    img: "/loveStory/5. Bohol.jpg"
+    img: "/loveStory/1. Perennial.jpg"
   },
   {
     place: "Cagayan De Oro",
