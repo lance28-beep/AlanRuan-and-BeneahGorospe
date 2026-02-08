@@ -6,12 +6,14 @@ import Image from "next/image"
 import { motion } from "motion/react"
 import { Play } from "lucide-react"
 import { useAudio } from "@/contexts/audio-context"
-import { Cinzel } from "next/font/google"
+import { bequta } from "@/app/fonts"
 
+/*
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 })
+*/
 
 // YouTube Player API types
 declare global {
@@ -172,7 +174,7 @@ export function CoupleVideo() {
         </div>
         
         <h2
-          className={`${cinzel.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-[#E1D5C7] mb-1.5 sm:mb-2 md:mb-3 lg:mb-4 drop-shadow-lg`}
+          className={`${bequta.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-[#E1D5C7] mb-1.5 sm:mb-2 md:mb-3 lg:mb-4 drop-shadow-lg`}
           style={{ textShadow: "0 4px 18px rgba(225,213,199,0.3)" }}
         >
           A Glimpse of Our Love

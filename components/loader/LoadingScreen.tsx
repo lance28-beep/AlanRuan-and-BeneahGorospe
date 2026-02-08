@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
 import { siteConfig } from '@/content/site';
+import { bequta } from "@/app/fonts";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -10,12 +11,13 @@ interface LoadingScreenProps {
 
 // Countdown boxes with color photos - numbers show days, hours, minutes
 const COUNTDOWN_BOXES = [
-  { src: '/mobile-background/couple (38).webp' },
-  { src: '/mobile-background/couple (35).webp' },
-  { src: '/mobile-background/couple (25).webp' },
+  { src: '/gallery/couple3.jpg' },
+  { src: '/gallery/couple2.jpg' },
+  { src: '/gallery/couple1.jpg' },
 ];
 
-const MAIN_BW_IMAGE = '/mobile-background/couple (33).webp';
+const MAIN_BW_IMAGE = '/mobile-background/couple (5).jpg';
+const MAIN_BW_DESKTOP = '/desktop-background/couple (5).jpg';
 const STAGGER_DELAY_MS = 4000; // Each image appears every 4 seconds
 const BOX_TRANSITION_MS = 1200; // Slow, smooth transition
 const TOTAL_DURATION_MS = COUNTDOWN_BOXES.length * STAGGER_DELAY_MS + 3000;
@@ -25,10 +27,21 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
   const [now, setNow] = useState(() => new Date());
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Live countdown: days, hours, minutes until wedding (March 21, 2026, 9:30 AM)
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Live countdown: days, hours, minutes until wedding (May 23, 2026, 9:30 AM)
   const countdown = useMemo(() => {
-    const wedding = new Date('2026-03-21T09:30:00');
+    const wedding = new Date('2026-05-23T09:30:00');
     const diff = wedding.getTime() - now.getTime();
     if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -49,8 +62,8 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     return `${days} DAYS TO GO`;
   }, [countdown.days]);
 
-  // Wedding date: 03.21.26 (month, day, year)
-  const countdownNumbers = ['03', '21', '26'];
+  // Wedding date: 05.23.26 (month, day, year)
+  const countdownNumbers = ['05', '23', '26'];
   const countdownLabels = ['MONTH', 'DAY', 'YEAR'];
 
   useEffect(() => {
@@ -94,11 +107,11 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
   // Palette tuned to requested hues
   const palette = {
-    deep: '#994524',
-    medium: '#C0531C',
-    accent: '#E69A41',
-    cream: '#FFF7ED',
-    soft: '#FBE5D6',
+    deep: '#BE8680',
+    medium: '#E7AA9D',
+    accent: '#DFAA98',
+    cream: '#F0DFCE',
+    soft: '#FFFFFF',
   };
 
   return (
@@ -110,7 +123,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src={MAIN_BW_IMAGE}
+          src={isMobile ? MAIN_BW_IMAGE : MAIN_BW_DESKTOP}
           alt=""
           fill
           className="object-cover object-center"
@@ -122,6 +135,14 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           className="absolute inset-0"
           style={{
             background: `linear-gradient(180deg, ${palette.deep}40 0%, transparent 25%, transparent 75%, ${palette.deep}55 100%)`,
+          }}
+        />
+        {/* Additional color overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: '#FBCCC9',
+            opacity: 0.25,
           }}
         />
       </div>
@@ -139,28 +160,28 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 <span
                   className="inline-block text-[10px] sm:text-xs tracking-[0.28em] sm:tracking-[0.36em] font-[family-name:var(--font-crimson)] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm border"
                   style={{
-                    color: '#800A06',
-                    backgroundColor: 'rgba(255, 247, 237, 0.86)',
-                    borderColor: 'rgba(128, 10, 6, 0.18)',
-                    textShadow: '0 1px 0 rgba(255,255,255,0.7)',
-                  }}
-                >
-                  Your invitation is on its way
-                </span>
-              </p>
-              <span
-                className="hidden sm:block h-px w-12 flex-shrink-0"
-                style={{ backgroundColor: palette.accent }}
-              />
-            </div>
+                  color: '#C44569',
+                  backgroundColor: `${palette.cream}DB`,
+                  borderColor: `${palette.deep}2E`,
+                  textShadow: '0 1px 0 rgba(255,255,255,0.7)',
+                }}
+              >
+                Your invitation is on its way
+              </span>
+            </p>
+            <span
+              className="hidden sm:block h-px w-12 flex-shrink-0"
+              style={{ backgroundColor: palette.accent }}
+            />
+          </div>
 
-            <p className="text-center mb-4 sm:mb-5">
-              <span
-                className="inline-block text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] font-[family-name:var(--font-crimson)] px-3 py-1.5 rounded-full backdrop-blur-sm border"
-                style={{
-                  color: '#800A06',
-                  backgroundColor: 'rgba(255, 247, 237, 0.86)',
-                  borderColor: 'rgba(128, 10, 6, 0.18)',
+          <p className="text-center mb-4 sm:mb-5">
+            <span
+              className="inline-block text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] font-[family-name:var(--font-crimson)] px-3 py-1.5 rounded-full backdrop-blur-sm border"
+              style={{
+                color: '#C44569',
+                  backgroundColor: `${palette.cream}DB`,
+                  borderColor: `${palette.deep}2E`,
                   textShadow: '0 1px 0 rgba(255,255,255,0.7)',
                 }}
               >
@@ -170,12 +191,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
             <h2 className="text-center">
               <span
-                className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[0.08em] sm:tracking-[0.12em] uppercase max-w-md mx-auto leading-tight px-2"
+                className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[0.08em] sm:tracking-[0.12em] uppercase max-w-md mx-auto leading-tight px-2 font-[family-name:var(--font-cinzel)]"
                 style={{
-                  fontFamily: '"Cinzel", serif',
-                  color: '#800A06',
-                  textShadow:
-                    '0 2px 14px rgba(0,0,0,0.55), 0 0 22px rgba(230,154,65,0.55), 0 0 44px rgba(192,83,28,0.25)',
+                  color: '#FFFFFF',
+                  textShadow: '0 0 10px #FBCCC9, 0 0 20px #FBCCC9, 0 0 30px #FBCCC9',
                 }}
               >
                 {countdownText}
@@ -214,14 +233,18 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                     className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black select-none leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
                     style={{
                       fontFamily: 'var(--font-granika), sans-serif',
-                      color: '#800A06',
+                      color: '#FFFFFF',
+                      textShadow: '0 0 10px #FBCCC9, 0 0 20px #FBCCC9, 0 0 30px #FBCCC9',
                     }}
                   >
                     {countdownNumbers[i]}
                   </span>
                   <span
                     className="text-[8px] sm:text-[9px] tracking-widest uppercase mt-0.5"
-                    style={{ color: '#800A06' }}
+                    style={{ 
+                      color: '#FFFFFF',
+                      textShadow: '0 0 5px #FBCCC9' 
+                    }}
                   >
                     {countdownLabels[i]}
                   </span>
@@ -235,16 +258,19 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         <div className="flex flex-col items-center justify-center w-full py-6 sm:py-8 px-4 flex-shrink-0">
           <p
             className="text-center text-sm sm:text-base tracking-[0.18em] uppercase text-[family-name:var(--font-crimson)] mb-2"
-            style={{ color: '#800A06' }}
+            style={{ 
+              color: '#FFFFFF',
+              textShadow: '0 0 5px #FBCCC9'
+            }}
           >
             Almost ready for
           </p>
           <div
-            className="text-center text-2xl sm:text-3xl md:text-4xl mb-2"
+            className="text-center text-2xl sm:text-3xl md:text-4xl mb-2 font-bold"
             style={{
-              fontFamily: 'var(--font-crimson)',
-              color: '#800A06',
-              textShadow: '0 2px 10px rgba(0,0,0,0.35)',
+              fontFamily: bequta.style.fontFamily,
+              color: '#FFFFFF',
+              textShadow: '0 0 10px #FBCCC9, 0 0 20px #FBCCC9',
             }}
           >
             {coupleNames}
@@ -260,7 +286,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           {/* Preparing message + progress bar */}
           <p
             className="text-xs sm:text-sm tracking-[0.22em] mt-6 mb-3 font-[family-name:var(--font-crimson)] uppercase"
-            style={{ color: '#800A06' }}
+            style={{ 
+              color: '#FFFFFF',
+              textShadow: '0 0 5px #FBCCC9'
+            }}
           >
             Crafting your invitation experience
           </p>
@@ -273,7 +302,8 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 className="h-full rounded-full transition-all duration-300 ease-out"
                 style={{
                   width: `${progress}%`,
-                  backgroundColor: palette.accent,
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 0 10px #FBCCC9, 0 0 20px #FBCCC9',
                 }}
               />
             </div>

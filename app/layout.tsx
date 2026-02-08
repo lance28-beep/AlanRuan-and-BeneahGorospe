@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Great_Vibes, Inter, Imperial_Script, Cinzel } from "next/font/google"
 import localFont from "next/font/local"
+import { bequta } from "./fonts"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { siteConfig } from "@/content/site"
@@ -61,7 +62,7 @@ const jsonLd = {
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
 const imperialScript = Imperial_Script({ subsets: ["latin"], weight: "400", variable: "--font-imperial-script" })
-const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-cinzel" })
+const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-cinzel" })
 const dialtones = localFont({
   src: "./dialtones-font/DialtonesRegular-V4x00.ttf",
   variable: "--font-dialtones",
@@ -185,7 +186,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body
-        className={`${inter.variable} ${greatVibes.variable} ${imperialScript.variable} ${cinzel.variable} ${dialtones.variable} font-inter antialiased text-foreground`}
+        className={`${inter.variable} ${greatVibes.variable} ${imperialScript.variable} ${cinzel.variable} ${dialtones.variable} ${bequta.variable} font-inter antialiased text-foreground`}
       >
         {children}
         <Analytics />

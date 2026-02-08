@@ -3,7 +3,8 @@
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
 import { Car, Navigation, MapPin } from "lucide-react"
-import { Cormorant_Garamond, Cinzel } from "next/font/google"
+import { Cormorant_Garamond } from "next/font/google"
+import { bequta } from "@/app/fonts"
 import Image from "next/image"
 
 const cormorant = Cormorant_Garamond({
@@ -11,10 +12,12 @@ const cormorant = Cormorant_Garamond({
   weight: ["400"],
 })
 
+/*
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 })
+*/
 
 export function GuestInformation() {
 
@@ -76,7 +79,7 @@ export function GuestInformation() {
             {/* Title */}
             <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-center relative z-10">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4">
-                <h4 className={`${cinzel.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#606C60] drop-shadow-sm`}>
+                <h4 className={`${bequta.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#606C60] drop-shadow-sm`}>
                   Wedding
                 </h4>
                 <h4 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#606C60] opacity-90">
@@ -94,7 +97,7 @@ export function GuestInformation() {
             {/* Description Text */}
             <div className="mb-5 sm:mb-6 md:mb-8 lg:mb-10 relative z-10 px-2">
               <div className="mb-3 sm:mb-4 md:mb-5">
-                <h5 className={`${cinzel.className} text-base sm:text-lg md:text-xl lg:text-2xl text-center text-[#606C60] mb-2 sm:mb-3`}>
+                <h5 className={`${bequta.className} text-base sm:text-lg md:text-xl lg:text-2xl text-center text-[#606C60] mb-2 sm:mb-3`}>
                 Attire guidelines
                 </h5>
                 <p className={`${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg text-center text-[#606C60] font-semibold`}>
@@ -270,7 +273,7 @@ export function GuestInformation() {
               {/* Arrival Time */}
               <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden border-2 border-[#606C60]/30 shadow-lg bg-[#F5F2ED] p-3 sm:p-4 md:p-5 lg:p-6">
                 <div className="mb-2 sm:mb-3">
-                  <h4 className={`${cinzel.className} text-xs sm:text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-[#606C60] mb-2 sm:mb-3`}>
+                  <h4 className={`${bequta.className} text-xs sm:text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-[#606C60] mb-2 sm:mb-3`}>
                     Arrival Time
                   </h4>
                   <div className="space-y-2 sm:space-y-2.5">
@@ -287,7 +290,7 @@ export function GuestInformation() {
               {/* Reception Guidelines */}
               <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden border-2 border-[#606C60]/30 shadow-lg bg-[#F5F2ED] p-3 sm:p-4 md:p-5 lg:p-6">
                 <div className="mb-2 sm:mb-3">
-                  <h4 className={`${cinzel.className} text-xs sm:text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-[#606C60] mb-2 sm:mb-3`}>
+                  <h4 className={`${bequta.className} text-xs sm:text-sm md:text-base font-semibold tracking-[0.25em] uppercase text-[#606C60] mb-2 sm:mb-3`}>
                     Reception Guidelines
                   </h4>
                   <div className="space-y-2 sm:space-y-2.5">
@@ -307,7 +310,7 @@ export function GuestInformation() {
               <div className="p-1.5 rounded-full shadow-md bg-[#F5F2ED] border-2 border-[#606C60]/30">
                 <Car className="w-3.5 h-3.5 text-[#606C60]" />
               </div>
-              <h4 className={`${cinzel.className} font-semibold text-xs sm:text-sm md:text-base text-[#606C60]`}>Parking &amp; Travel</h4>
+              <h4 className={`${bequta.className} font-semibold text-xs sm:text-sm md:text-base text-[#606C60]`}>Parking &amp; Travel</h4>
             </div>
 
             <div className="space-y-3 relative z-10">

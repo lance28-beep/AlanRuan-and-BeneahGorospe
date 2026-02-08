@@ -7,19 +7,19 @@ interface HeroProps {
 }
 
 const desktopImages: string[] = [
-  '/desktop-background/couple (1).webp',
-  '/desktop-background/couple (2).webp',
-  '/desktop-background/couple (3).webp',
-  '/desktop-background/couple (4).webp',
-  '/desktop-background/couple (5).webp',
+  '/desktop-background/couple (1).jpg',
+  '/desktop-background/couple (2).jpg',
+  '/desktop-background/couple (3).jpg',
+  '/desktop-background/couple (4).jpg',
+  '/desktop-background/couple (5).jpg',
 ];
 
 const mobileImages: string[] = [
-  '/mobile-background/couple (1).webp',
-  '/mobile-background/couple (2).webp',
-  '/mobile-background/couple (3).webp',
-  '/mobile-background/couple (4).webp',
-  '/mobile-background/couple (5).webp',
+  '/mobile-background/couple (1).jpg',
+  '/mobile-background/couple (2).jpg',
+  '/mobile-background/couple (3).jpg',
+  '/mobile-background/couple (4).jpg',
+  '/mobile-background/couple (5).jpg',
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
@@ -142,9 +142,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
                 className="object-contain drop-shadow-lg"
                 priority
                 style={{
-                  // Tint towards #800A06
+                  // White with glow #FBCCC9
                   filter:
-                    'brightness(0) saturate(100%) invert(9%) sepia(74%) saturate(3161%) hue-rotate(353deg) brightness(92%) contrast(103%)',
+                    'brightness(0) invert(1) drop-shadow(0 0 5px #FBCCC9) drop-shadow(0 0 10px #FBCCC9)',
                 }}
               />
             </div>
@@ -161,8 +161,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             style={{
               fontFamily: '"Great Vibes", cursive',
               fontWeight: 400,
-              color: '#800A06',
-              textShadow: '0 2px 8px rgba(128, 10, 6, 0.15)',
+              color: '#FFFFFF',
+              textShadow: '0 0 10px #FBCCC9, 0 0 20px #FBCCC9',
             }}
           >
             You are
@@ -175,8 +175,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             style={{
               fontFamily: '"Cinzel", serif',
               fontWeight: 700,
-              color: '#800A06',
-              textShadow: '0 2px 8px rgba(128, 10, 6, 0.15)',
+              color: '#FFFFFF',
+              textShadow: '0 0 10px #FBCCC9, 0 0 20px #FBCCC9',
               letterSpacing: '0.05em',
             }}
           >
@@ -191,23 +191,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              backgroundColor: '#800A06',
-              borderColor: '#800A06',
-              color: '#EFCA93',
+              backgroundColor: '#C44569',
+              borderColor: '#C44569',
+              color: '#FFFFFF',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#671107';
+              e.currentTarget.style.backgroundColor = '#D65D7D';
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.borderColor = '#671107';
+              e.currentTarget.style.borderColor = '#D65D7D';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#800A06';
+              e.currentTarget.style.backgroundColor = '#C44569';
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.borderColor = '#800A06';
+              e.currentTarget.style.borderColor = '#C44569';
             }}
           >
             <span
-              style={{ fontFamily: '"Cinzel", serif', fontWeight: 500, color: '#EFCA93' }}
+              style={{ fontFamily: '"Cinzel", serif', fontWeight: 600, color: '#FFFFFF' }}
             >
               Open Invitation
             </span>

@@ -48,18 +48,18 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
             <CardContent className="p-2.5 sm:p-3 md:p-4 lg:p-5">
               <div className="flex justify-between items-start mb-2 sm:mb-3 md:mb-4">
                 <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-                  <Skeleton className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-[#800A06]/20 via-[#800A06]/14 to-[#800A06]/12" />
+                  <Skeleton className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-[#C44569]/20 via-[#C44569]/14 to-[#C44569]/12" />
                   <div className="space-y-1.5 sm:space-y-2">
-                    <Skeleton className="h-3 w-20 sm:w-24 md:w-32 bg-[#800A06]/18" />
-                    <Skeleton className="h-2.5 w-16 sm:w-20 md:w-24 bg-[#800A06]/12" />
+                    <Skeleton className="h-3 w-20 sm:w-24 md:w-32 bg-[#C44569]/18" />
+                    <Skeleton className="h-2.5 w-16 sm:w-20 md:w-24 bg-[#C44569]/12" />
                   </div>
                 </div>
                 <div className="flex gap-1.5 sm:gap-2">
-                  <Skeleton className="w-3 h-3 sm:w-4 sm:h-4 rounded bg-[#800A06]/14" />
-                  <Skeleton className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-[#800A06]/10" />
+                  <Skeleton className="w-3 h-3 sm:w-4 sm:h-4 rounded bg-[#C44569]/14" />
+                  <Skeleton className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-[#C44569]/10" />
                 </div>
               </div>
-              <Skeleton className="h-12 sm:h-14 md:h-16 w-full bg-gradient-to-r from-[#800A06]/10 via-[#800A06]/8 to-[#800A06]/10 rounded-lg" />
+              <Skeleton className="h-12 sm:h-14 md:h-16 w-full bg-gradient-to-r from-[#C44569]/10 via-[#C44569]/8 to-[#C44569]/10 rounded-lg" />
             </CardContent>
           </Card>
         ))}
@@ -71,13 +71,13 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
     return (
       <div className="text-center py-6 sm:py-10 md:py-14 lg:py-16 xl:py-20 px-2 sm:px-4">
         <div className="relative inline-block mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#800A06]/18 to-[#800A06]/12 rounded-full blur-xl scale-150 animate-pulse-slow" />
-          <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-gradient-to-br from-[#800A06] via-[#800A06] to-[#800A06] rounded-full flex items-center justify-center mx-auto shadow-lg">
-            <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10 text-[#EFD2AA]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#C44569]/18 to-[#C44569]/12 rounded-full blur-xl scale-150 animate-pulse-slow" />
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-gradient-to-br from-[#C44569] via-[#C44569] to-[#C44569] rounded-full flex items-center justify-center mx-auto shadow-lg">
+            <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10 text-[#FFF7F6]" />
           </div>
           {/* Outer decorative rings */}
-          <div className="absolute -inset-2 sm:-inset-3 rounded-full border-2 border-[#800A06]/18 animate-ping"></div>
-          <div className="absolute -inset-1.5 sm:-inset-2 rounded-full border border-[#800A06]/25"></div>
+          <div className="absolute -inset-2 sm:-inset-3 rounded-full border-2 border-[#C44569]/18 animate-ping"></div>
+          <div className="absolute -inset-1.5 sm:-inset-2 rounded-full border border-[#C44569]/25"></div>
         </div>
         <h3 className={`${cormorant.className} text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4`}>
           No Messages Yet
@@ -101,7 +101,7 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
       {visibleMessages.map((msg, index) => (
         <Card
           key={index}
-          className={`relative shadow-lg bg-[#EFD2AA] backdrop-blur-md hover:shadow-2xl transition-all duration-500 group overflow-hidden transform rounded-xl sm:rounded-2xl hover:scale-[1.01] ${
+          className={`relative shadow-lg bg-[#FFF7F6] backdrop-blur-md hover:shadow-2xl transition-all duration-500 group overflow-hidden transform rounded-xl sm:rounded-2xl hover:scale-[1.01] ${
             isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
           }`}
           style={{
@@ -117,8 +117,8 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           }}
         >
           {/* Enhanced card background effects */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#800A06]/10 via-transparent to-white/10 opacity-70 group-hover:opacity-95 transition-opacity duration-300" />
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#800A06]/40 via-[#800A06]/45 to-[#800A06]/40 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#C44569]/10 via-transparent to-white/10 opacity-70 group-hover:opacity-95 transition-opacity duration-300" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C44569]/40 via-[#C44569]/45 to-[#C44569]/40 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           <div className="absolute -inset-[1px] rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: 'inset 0 0 0 1px rgba(128, 10, 6, 0.18)' }} />
           
           {/* Subtle shimmer effect on hover */}
@@ -126,15 +126,15 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           
           {/* Simple inner border */}
           <div className="absolute inset-2 sm:inset-3 rounded-xl pointer-events-none">
-            <div className="absolute inset-0 rounded-xl border border-[#800A06]/12 group-hover:border-[#800A06]/25 transition-colors duration-300" />
+            <div className="absolute inset-0 rounded-xl border border-[#C44569]/12 group-hover:border-[#C44569]/25 transition-colors duration-300" />
           </div>
           
           <CardContent className="relative p-2 sm:p-2.5 md:p-3 lg:p-3.5">
             <div className="flex justify-between items-start mb-1.5 sm:mb-2 md:mb-2.5">
               <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-2.5">
                 <div className="relative">
-                  <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 bg-[#800A06] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg ring-2 ring-white/50">
-                    <span className={`${cormorant.className} text-[#EFD2AA] text-xs sm:text-sm md:text-base font-semibold drop-shadow-sm`}>
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 bg-[#C44569] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg ring-2 ring-white/50">
+                    <span className={`${cormorant.className} text-[#FFF7F6] text-xs sm:text-sm md:text-base font-semibold drop-shadow-sm`}>
                       {msg.name
                         .split(" ")
                         .map((n) => n[0])
@@ -143,14 +143,14 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
                     </span>
                   </div>
                   {/* Subtle avatar glow */}
-                  <div className="absolute -inset-1 rounded-full bg-[#800A06]/18 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                  <div className="absolute -inset-1 rounded-full bg-[#C44569]/18 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-baseline gap-1 sm:gap-1.5">
-                    <h4 className={`${cormorant.className} text-[#800A06] text-xs sm:text-sm md:text-base font-semibold truncate group-hover:text-[#800A06] transition-colors duration-300`}>
+                    <h4 className={`${cormorant.className} text-[#C44569] text-xs sm:text-sm md:text-base font-semibold truncate group-hover:text-[#C44569] transition-colors duration-300`}>
                       {msg.name}
                     </h4>
-                    <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs text-[#800A06]/70 truncate`}>
+                    <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs text-[#C44569]/70 truncate`}>
                       {new Date(msg.timestamp).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "short",
@@ -163,29 +163,29 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
                 </div>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Heart className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-[#800A06]/85 fill-[#800A06]/15 group-hover:fill-[#800A06]/30 group-hover:text-[#800A06] transition-all duration-300 group-hover:scale-110" />
-                <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-[#800A06]/85 group-hover:text-[#800A06] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <Heart className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-[#C44569]/85 fill-[#C44569]/15 group-hover:fill-[#C44569]/30 group-hover:text-[#C44569] transition-all duration-300 group-hover:scale-110" />
+                <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-[#C44569]/85 group-hover:text-[#C44569] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
               </div>
             </div>
             
             <div className="relative pl-4 sm:pl-6 md:pl-8 pr-2 sm:pr-4 md:pr-6 py-2 sm:py-3">
               {/* Decorative left quote mark */}
               <div className="absolute left-0 top-0 flex flex-col items-start">
-                <span className={`${cormorant.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#800A06]/20 leading-none group-hover:text-[#800A06]/30 transition-all duration-300 group-hover:scale-110`}>
+                <span className={`${cormorant.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#C44569]/20 leading-none group-hover:text-[#C44569]/30 transition-all duration-300 group-hover:scale-110`}>
                   "
                 </span>
-                <div className="w-8 sm:w-10 md:w-12 h-0.5 bg-gradient-to-r from-[#800A06]/20 to-transparent mt-1 group-hover:from-[#800A06]/30 transition-all duration-300" />
+                <div className="w-8 sm:w-10 md:w-12 h-0.5 bg-gradient-to-r from-[#C44569]/20 to-transparent mt-1 group-hover:from-[#C44569]/30 transition-all duration-300" />
               </div>
               
               {/* Message text with improved readability */}
-              <p className={`${cormorant.className} text-[#800A06] text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed sm:leading-loose italic group-hover:text-[#800A06]/95 transition-colors duration-300 relative z-10`}>
+              <p className={`${cormorant.className} text-[#C44569] text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed sm:leading-loose italic group-hover:text-[#C44569]/95 transition-colors duration-300 relative z-10`}>
                 {msg.message}
               </p>
               
               {/* Decorative right quote mark */}
               <div className="absolute right-0 bottom-0 flex flex-col items-end">
-                <div className="w-8 sm:w-10 md:w-12 h-0.5 bg-gradient-to-l from-[#800A06]/20 to-transparent mb-1 group-hover:from-[#800A06]/30 transition-all duration-300" />
-                <span className={`${cormorant.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#800A06]/22 leading-none group-hover:text-[#800A06]/35 transition-all duration-300 group-hover:scale-110`}>
+                <div className="w-8 sm:w-10 md:w-12 h-0.5 bg-gradient-to-l from-[#C44569]/20 to-transparent mb-1 group-hover:from-[#C44569]/30 transition-all duration-300" />
+                <span className={`${cormorant.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#C44569]/22 leading-none group-hover:text-[#C44569]/35 transition-all duration-300 group-hover:scale-110`}>
                   "
                 </span>
               </div>
@@ -193,12 +193,12 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
             
               {/* Enhanced message bottom accent */}
             <div className="mt-1.5 sm:mt-2 md:mt-3 flex items-center justify-between">
-                <div className="flex items-center gap-0.5 sm:gap-1 text-[9px] sm:text-[10px] text-[#800A06]/65">
-                  <div className="w-1 h-1 rounded-full bg-[#800A06]/80" />
-                  <div className="w-1 h-1 rounded-full bg-[#800A06]/80" />
-                  <div className="w-1 h-1 rounded-full bg-[#800A06]/80" />
+                <div className="flex items-center gap-0.5 sm:gap-1 text-[9px] sm:text-[10px] text-[#C44569]/65">
+                  <div className="w-1 h-1 rounded-full bg-[#C44569]/80" />
+                  <div className="w-1 h-1 rounded-full bg-[#C44569]/80" />
+                  <div className="w-1 h-1 rounded-full bg-[#C44569]/80" />
               </div>
-                <div className="w-14 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-[#800A06]/55 to-transparent group-hover:via-[#800A06]/70 transition-all duration-300" />
+                <div className="w-14 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-[#C44569]/55 to-transparent group-hover:via-[#C44569]/70 transition-all duration-300" />
             </div>
           </CardContent>
         </Card>

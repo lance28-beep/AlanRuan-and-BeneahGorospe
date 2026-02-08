@@ -2,17 +2,20 @@
 
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
-import { Cormorant_Garamond, Cinzel } from "next/font/google"
+import { Cormorant_Garamond } from "next/font/google"
+import { bequta } from "@/app/fonts"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 })
 
+/*
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 })
+*/
 
 export function Welcome() {
   const brideName = siteConfig.couple.brideNickname || siteConfig.couple.bride
@@ -23,35 +26,35 @@ export function Welcome() {
       className="relative overflow-hidden bg-transparent py-12 sm:py-16 md:py-20"
     >
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[2rem] border-2 border-[#800A06]/25 bg-[#EFCA93] backdrop-blur-2xl shadow-[0_16px_60px_rgba(128,10,6,0.28)] px-4 sm:px-5 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[2rem] border border-[#C44569]/20 bg-[#FFF7F6] backdrop-blur-2xl shadow-[0_16px_60px_rgba(196,69,105,0.15)] px-4 sm:px-5 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 lg:py-12">
           {/* Layered glass + light accents for readability */}
           <div className="pointer-events-none absolute inset-0">
             {/* Solid primary background with slight transparency */}
             <div
               className="absolute inset-0 opacity-90"
               style={{
-                backgroundColor: "rgba(239, 202, 147, 0.96)", // #EFCA93
+                backgroundColor: "#FFF7F6",
               }}
             />
             {/* Subtle radial highlights */}
-            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-[radial-gradient(circle_at_center,rgba(239,202,147,0.45),transparent_60%)] opacity-80" />
-            <div className="absolute bottom-[-6rem] right-[-2rem] w-64 h-64 bg-[radial-gradient(circle_at_center,rgba(239,202,147,0.35),transparent_60%)] opacity-85" />
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-[radial-gradient(circle_at_center,rgba(251,204,201,0.4),transparent_60%)] opacity-80" />
+            <div className="absolute bottom-[-6rem] right-[-2rem] w-64 h-64 bg-[radial-gradient(circle_at_center,rgba(251,204,201,0.3),transparent_60%)] opacity-85" />
             {/* Inner border glow */}
-            <div className="absolute inset-[1px] rounded-[inherit] border border-[#800A06]/20" />
+            <div className="absolute inset-[1px] rounded-[inherit] border border-[#C44569]/10" />
           </div>
 
           <div className="relative text-center space-y-4 sm:space-y-6 md:space-y-7 lg:space-y-8">
           {/* Main heading */}
           <div className="space-y-1 sm:space-y-1.5 md:space-y-2.5">
             <p
-              className={`${cormorant.className} text-[0.65rem] sm:text-[0.7rem] md:text-xs lg:text-sm uppercase tracking-[0.24em] sm:tracking-[0.28em] text-[#800A06]`}
-              style={{ textShadow: "0 1px 8px rgba(128,10,6,0.35)" }}
+              className={`${cormorant.className} text-[0.65rem] sm:text-[0.7rem] md:text-xs lg:text-sm uppercase tracking-[0.24em] sm:tracking-[0.28em] text-[#C44569]`}
+              style={{ textShadow: "0 1px 8px rgba(196,69,105,0.15)" }}
             >
               {groomName} &amp; {brideName}
             </p>
             <h2
-              className={`${cinzel.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[2.9rem] text-[#800A06]`}
-              style={{ textShadow: "0 3px 14px rgba(128,10,6,0.45)" }}
+              className={`${bequta.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[2.9rem] text-[#C44569]`}
+              style={{ textShadow: "0 3px 14px rgba(196,69,105,0.2)" }}
             >
               Welcome to our wedding website
             </h2>
@@ -60,14 +63,14 @@ export function Welcome() {
             {/* Verse */}
             <div className="space-y-0.5 sm:space-y-1">
               <p
-                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base text-[#800A06]/90 italic leading-relaxed`}
-                style={{ textShadow: "0 1px 8px rgba(128,10,6,0.3)" }}
+                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base text-[#C44569]/90 italic leading-relaxed`}
+                style={{ textShadow: "0 1px 8px rgba(196,69,105,0.1)" }}
               >
                 &quot;In God&apos;s perfect time, love grows and all things become beautiful.&quot;
               </p>
               <p
-                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base text-[#800A06]/90 italic leading-relaxed`}
-                style={{ textShadow: "0 1px 8px rgba(128,10,6,0.3)" }}
+                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base text-[#C44569]/90 italic leading-relaxed`}
+                style={{ textShadow: "0 1px 8px rgba(196,69,105,0.1)" }}
               >
                 &quot;Love bears all things, hopes all things, endures all things.&quot;
               </p>
@@ -75,15 +78,15 @@ export function Welcome() {
 
             {/* Divider */}
             <div className="flex items-center justify-center gap-2 pt-1">
-              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#800A06]/35" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#800A06] shadow-[0_0_14px_rgba(128,10,6,0.7)]" />
-              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#800A06]/35" />
+              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#C44569]/35" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C44569] shadow-[0_0_14px_rgba(196,69,105,0.4)]" />
+              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#C44569]/35" />
             </div>
           </div>
 
           {/* Body text */}
           <div
-            className={`${cormorant.className} text-[0.75rem] sm:text-[0.85rem] md:text-sm lg:text-base leading-relaxed sm:leading-6 md:leading-7 text-[#800A06] space-y-2.5 sm:space-y-3 md:space-y-4`}
+            className={`${cormorant.className} text-[0.75rem] sm:text-[0.85rem] md:text-sm lg:text-base leading-relaxed sm:leading-6 md:leading-7 text-[#C44569] space-y-2.5 sm:space-y-3 md:space-y-4`}
           >
             <p>
               We&apos;ve found a love that&apos;s a true blessing, and we give thanks to God for writing the

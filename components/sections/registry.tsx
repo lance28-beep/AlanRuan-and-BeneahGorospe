@@ -1,6 +1,7 @@
 "use client"
 
 import { Section } from "@/components/section"
+import { bequta } from "@/app/fonts"
 
 export function Registry() {
   return (
@@ -17,12 +18,12 @@ export function Registry() {
           <div className="w-8 sm:w-12 md:w-16 h-px bg-white/60" />
         </div>
         
-        <h2 className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
+        <h2 className={`${bequta.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-2 sm:mb-3 md:mb-4`}>
           Gift Guide
         </h2>
         
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed px-2">
-          We are grateful to God for your love and prayers on our special day. For those who wish to give a gift, a monetary gift to help us begin our life together would be deeply appreciated.
+          With all that we have we are truly blessed, your presence and prayer are that we request. But if you desire to give nonetheless, monetary gift is the one we suggest.
         </p>
         
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">

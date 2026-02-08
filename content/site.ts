@@ -1,67 +1,67 @@
 export const siteConfig = {
   couple: {
-    bride: "Guilliane B. Arias",
-    brideNickname: "Guilliane",
-    groom: "Carlo A. Diomampo",
-    groomNickname: "Carlo",
+    bride: "Jennica Ebreo",
+    brideNickname: "Jennica",
+    groom: "Jojo Aguba",
+    groomNickname: "Jojo",
   },
   wedding: {
-    date: "MARCH 21, 2026",
-    time: "9:30 AM",
-    venue: "St. Therese of the Jesus Child Parish",
+    date: "MAY 23, 2026",
+    time: "10:00 AM",
+    venue: "Mary Mediatrix of All Grace Parish",
     tagline: "are getting married!",
     theme: "Modern Filipiniana",
     motif: "#87AE73, #9CAF88, #F5F5DC, #E6D5B8, #D2B48C",
   },
   details: {
     rsvp: {
-      deadline: "July 01, 2026",
+      deadline: "April 23, 2026",
       contact: "Monique Ogalesco",
       phone: "647-622-5353",
     },
   },
   ceremony: {
-    location: "St. Therese of the Child Jesus and the Holy Face Parish Church",
-    address: "X5CW+88P, Santo Tomas-Lipa Rd, Talisay, Lipa City, 4217 Batangas, Philippines",
-    venue: "St. Therese of the Child Jesus and the Holy Face Parish Church",
-    date: "March 21 2026",
+    location: "Mary Mediatrix of All Grace Parish",
+    address: "Antipolo del Norte, Lipa City, Batangas",
+    venue: "Mary Mediatrix of All Grace Parish",
+    date: "May 23, 2026",
     day: "Saturday",
-    time: "9:30 AM",
+    time: "10:00 AM",
     entourageTime: "9:00 AM",
-    guestsTime: "8:30 AM",
+    guestsTime: "9:30 AM",
   },
   reception: {
-    location: "RML Garden Resort and Pavilion",
-    address: "Santo Tomas - Lipa Rd, Lipa, Philippines",
-    venue: "RML Garden Resort and Pavilion",
-    date: "March 21, 2026",
+    location: "La Vida Resort and Events Center",
+    address: "Lodlod, Lipa City, Batangas",
+    venue: "La Vida Resort and Events Center",
+    date: "May 23, 2026",
     time: "12:00 PM",
   },
   dressCode: {
     theme: "Modern Filipiniana",
-    colors: ["#87AE73", "#9CAF88", "#F5F5DC", "#E6D5B8", "#D2B48C"],
+    colors: ["#CBA990", "#EBD3B9", "#F5E1C0"],
     sponsors: {
-      male: "Barong Tagalog | Puting Panloob | Itim na Pantalon | Itim na sapatos",
-      female: "Filipiniana or Traje de Mestiza"
+      male: "Barong & Black Pants",
+      female: "Long Gown"
     },
     guests: {
-      gents: "Barong Tagalog | Puting Panloob | Itim na Pantalon | Itim na sapatos",
-      ladies: "Modern Filipiniana or Traje de Mestiza"
+      gents: "Semi-Formal",
+      ladies: "Semi-Formal"
     },
-    note: "We kindly request our guests to dress in semi-formal attire following our Modern Filipiniana theme."
+    note: "We kindly request our guests to dress in semi-formal attire following our color palette."
   },
   narratives: {
     ourStory: `God works in mysterious ways — sometimes He starts a story in the most ordinary moments. We had no idea that what began so simply would become the greatest adventure of our lives.`,
-    groom: `The first time Mark saw Catherine, time seemed to slow down. It was an ordinary day that instantly became unforgettable: one smile, one hello, and suddenly his world had a new center. He didn't have the perfect words ready, but he knew he had met someone who felt like home.
+    groom: `The first time Jojo saw Jennica, time seemed to slow down. It was an ordinary day that instantly became unforgettable: one smile, one hello, and suddenly his world had a new center. He didn't have the perfect words ready, but he knew he had met someone who felt like home.
 
-Early conversations turned into late-night talks, sharing dreams, favorite meals, and whispered prayers for a future together. With every small adventure—coffee runs, long drives, quiet walks—Mark found himself choosing her over and over again. He loved how she laughed freely, how she listened with her whole heart, and how her faith steadied him.
+Early conversations turned into late-night talks, sharing dreams, favorite meals, and whispered prayers for a future together. With every small adventure—coffee runs, long drives, quiet walks—Jojo found himself choosing her over and over again. He loved how she laughed freely, how she listened with her whole heart, and how her faith steadied him.
 
-There were seasons of distance and long workdays, but every reunion reminded him why he stayed patient: because Catherine was worth every mile and every minute apart. When he finally knelt to ask for her hand, it wasn't a question of "if," only "when can we start forever?"`,
-    bride: `Catherine remembers the first time Mark said her name. It was gentle but sure, a kindness that made her feel both seen and safe. In that softness, she found a partner who met her with the same grace she prayed to give.
+There were seasons of distance and long workdays, but every reunion reminded him why he stayed patient: because Jennica was worth every mile and every minute apart. When he finally knelt to ask for her hand, it wasn't a question of "if," only "when can we start forever?"`,
+    bride: `Jennica remembers the first time Jojo said her name. It was gentle but sure, a kindness that made her feel both seen and safe. In that softness, she found a partner who met her with the same grace she prayed to give.
 
-Mark's steadiness won her heart: the way he showed up, even when schedules were tight, and how he always found lightness in the small things. He celebrated her wins, held space for her worries, and never hesitated to choose "us" in every decision.
+Jojo's steadiness won her heart: the way he showed up, even when schedules were tight, and how he always found lightness in the small things. He celebrated her wins, held space for her worries, and never hesitated to choose "us" in every decision.
 
-Now, as they prepare to say yes before God and the people they love most, Catherine is grateful for the patience, humor, and hope Mark brings to every day. She knows this next chapter is just the start of the love story they get to write together.`,
+Now, as they prepare to say yes before God and the people they love most, Jennica is grateful for the patience, humor, and hope Jojo brings to every day. She knows this next chapter is just the start of the love story they get to write together.`,
   },
   colors: {
     primary: "#87AE73",
@@ -69,7 +69,7 @@ Now, as they prepare to say yes before God and the people they love most, Cather
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1lk45T1tGmm5_Oa48ABV_Cgrnpp1T2kTk?usp=sharing",
-    hashtag: "#CarloAndGuillianeSayIDo",
+    hashtag: "#JojoAndJennicaSayIDo",
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

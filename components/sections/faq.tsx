@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { Section } from "@/components/section"
-import { Cormorant_Garamond, Cinzel } from "next/font/google"
+import { Cormorant_Garamond } from "next/font/google"
+import { bequta } from "@/app/fonts"
 import { siteConfig } from "@/content/site"
 
 const cormorant = Cormorant_Garamond({
@@ -11,10 +12,17 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "600", "700"],
 })
 
+const arialFont = {
+  className: "font-sans",
+  style: { fontFamily: "Arial, sans-serif" }
+}
+
+/*
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["400"],
 })
+*/
 
 interface FAQItem {
   question: string
@@ -30,17 +38,12 @@ const faqItems: FAQItem[] = [
   {
     question: "Where will the ceremony and reception take place?",
     answer:
-      `The ceremony will be held at ${siteConfig.ceremony.location}. The reception will follow at ${siteConfig.reception.location}. You can find detailed directions, addresses, and maps in the Details section above.`,
+      `The ceremony will be held at ${siteConfig.ceremony.location} in ${siteConfig.ceremony.address}. The reception will follow at ${siteConfig.reception.location} in ${siteConfig.reception.address}.`,
   },
   {
     question: "What time should I arrive?",
     answer:
       `Kindly arrive by ${siteConfig.ceremony.guestsTime} so we can begin the ceremony promptly at exactly ${siteConfig.ceremony.time}. The entourage will arrive at ${siteConfig.ceremony.entourageTime}. Your punctuality means so much to us!`,
-  },
-  {
-    question: "How do I RSVP?",
-    answer:
-      `Please RSVP through the RSVP section on this invitation. Simply search for your name in the guest list, confirm your attendance, and let us know if you'll be bringing companions. We kindly ask for your response on or before ${siteConfig.details.rsvp.deadline} to help us prepare for the big day. For any questions, please contact ${siteConfig.details.rsvp.contact} at ${siteConfig.details.rsvp.phone}.`,
   },
   {
     question: "Can I bring a plus one or additional guests?",
@@ -55,7 +58,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is there a dress code?",
     answer:
-      `Wedding ATTIRE found in guest details section.\n\nAttire guide\nStrictly semi formal/ formal attire\n\nWe know many like to come dressed to compliment the big day. Provided below is the color palette of our day. We look forward to seeing you all!`,
+      "Please refer to the attire guide below.",
   },
   {
     question: "Will there be assigned seating?",
@@ -66,11 +69,6 @@ const faqItems: FAQItem[] = [
     question: "Is there parking available?",
     answer:
       "Yes, parking is available at both venues. Please follow the parking signs and instructions from our venue coordinators.",
-  },
-  {
-    question: "What should I give as a gift?",
-    answer:
-      "With all that we have, we are truly blessed. Your presence and prayers are what we request most. However, if you desire to give nonetheless, a monetary gift to help us begin our new life together would be humbly appreciated. You can find our gift registry information in the Gift Guide section.",
   },
   {
     question: "Can I take photos and videos during the ceremony?",
@@ -111,7 +109,7 @@ export function FAQ() {
         </p>
 
         <h2
-          className={`${cinzel.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4`}
+          className={`${bequta.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4`}
         >
           Frequently Asked Questions
         </h2>
@@ -152,7 +150,7 @@ export function FAQ() {
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                     >
-                      <span className={`${cinzel.className} font-semibold text-[#800A06] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#671107]`}>
+                      <span className={`${arialFont.className} font-normal text-[#800A06] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#671107]`} style={arialFont.style}>
                         {item.question}
                       </span>
                       <ChevronDown
@@ -187,83 +185,35 @@ export function FAQ() {
                               {item.answer.split("[/RSVP_LINK]")[1]}
                             </p>
                           ) : item.question === "Is there a dress code?" ? (
-                            <div className="space-y-3 sm:space-y-4">
-                              <p className={`${cormorant.className} text-[#800A06] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg tracking-wide`}>
-                                {item.answer}
-                              </p>
-                              {/* Color Palette */}
-                              <div className="flex items-end justify-center gap-1.5 sm:gap-2 md:gap-3 mt-4 sm:mt-5">
-                                {/* Color 1: #606C60 */}
-                                <div className="flex-1 max-w-[40px] sm:max-w-[50px] md:max-w-[60px] lg:max-w-[70px] group">
-                                  <div 
-                                    className="w-full h-16 sm:h-20 md:h-24 lg:h-28 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
-                                    style={{ 
-                                      backgroundColor: '#800A06',
-                                      clipPath: 'polygon(0 12%, 50% 0%, 100% 12%, 100% 100%, 0% 100%)',
-                                      borderRadius: '0 0 4px 4px',
-                                      boxShadow: '0 2px 8px rgba(96, 108, 96, 0.25)',
-                                      border: '2px solid rgba(96, 108, 96, 0.3)'
-                                    }}
-                                  />
+                            <div className="space-y-6 sm:space-y-8 pt-2">
+                              {/* Principal Sponsor Attire */}
+                              <div className="space-y-2 sm:space-y-3">
+                                <h4 className={`${cormorant.className} text-[#800A06] font-bold text-sm sm:text-base md:text-lg uppercase tracking-widest`}>Principal Sponsor Attire</h4>
+                                <div className={`${cormorant.className} text-[#800A06] text-xs sm:text-sm md:text-base space-y-1`}>
+                                  <p><span className="font-semibold">Ninang:</span> Long Gown</p>
+                                  <p><span className="font-semibold">Ninong:</span> Barong & Black Pants</p>
                                 </div>
-                                
-                                {/* Color 2: #E1D5C7 */}
-                                <div className="flex-1 max-w-[40px] sm:max-w-[50px] md:max-w-[60px] lg:max-w-[70px] group">
-                                  <div 
-                                    className="w-full h-16 sm:h-20 md:h-24 lg:h-28 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
-                                    style={{ 
-                                      backgroundColor: '#EFCA93',
-                                      clipPath: 'polygon(0 12%, 50% 0%, 100% 12%, 100% 100%, 0% 100%)',
-                                      borderRadius: '0 0 4px 4px',
-                                      boxShadow: '0 2px 8px rgba(225, 213, 199, 0.25)',
-                                      border: '2px solid rgba(96, 108, 96, 0.3)'
-                                    }}
-                                  />
+                                <div className="flex gap-2 sm:gap-3 mt-3">
+                                  {['#CBA990', '#EBD3B9', '#F5E1C0'].map((color, i) => (
+                                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#800A06]/20 shadow-sm" style={{ backgroundColor: color }} />
+                                  ))}
                                 </div>
-                                
-                                {/* Color 3: #96A298 */}
-                                <div className="flex-1 max-w-[40px] sm:max-w-[50px] md:max-w-[60px] lg:max-w-[70px] group">
-                                  <div 
-                                    className="w-full h-16 sm:h-20 md:h-24 lg:h-28 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
-                                    style={{ 
-                                      backgroundColor: '#AC5F3E',
-                                      clipPath: 'polygon(0 12%, 50% 0%, 100% 12%, 100% 100%, 0% 100%)',
-                                      borderRadius: '0 0 4px 4px',
-                                      boxShadow: '0 2px 8px rgba(150, 162, 152, 0.25)',
-                                      border: '2px solid rgba(96, 108, 96, 0.3)'
-                                    }}
-                                  />
+                              </div>
+
+                              {/* Guest Attire */}
+                              <div className="space-y-2 sm:space-y-3">
+                                <h4 className={`${cormorant.className} text-[#800A06] font-bold text-sm sm:text-base md:text-lg uppercase tracking-widest`}>Guest Attire</h4>
+                                <div className={`${cormorant.className} text-[#800A06] text-xs sm:text-sm md:text-base space-y-1`}>
+                                  <p>Semi-Formal</p>
                                 </div>
-                                
-                                {/* Color 4: #DFDBD2 */}
-                                <div className="flex-1 max-w-[40px] sm:max-w-[50px] md:max-w-[60px] lg:max-w-[70px] group">
-                                  <div 
-                                    className="w-full h-16 sm:h-20 md:h-24 lg:h-28 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
-                                    style={{ 
-                                      backgroundColor: '#DEC1A0',
-                                      clipPath: 'polygon(0 12%, 50% 0%, 100% 12%, 100% 100%, 0% 100%)',
-                                      borderRadius: '0 0 4px 4px',
-                                      boxShadow: '0 2px 8px rgba(223, 219, 210, 0.25)',
-                                      border: '2px solid rgba(96, 108, 96, 0.3)'
-                                    }}
-                                  />
-                                </div>
-                                
-                                {/* Color 5: #555754 */}
-                                <div className="flex-1 max-w-[40px] sm:max-w-[50px] md:max-w-[60px] lg:max-w-[70px] group">
-                                  <div 
-                                    className="w-full h-16 sm:h-20 md:h-24 lg:h-28 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
-                                    style={{ 
-                                      backgroundColor: '#671107',
-                                      clipPath: 'polygon(0 12%, 50% 0%, 100% 12%, 100% 100%, 0% 100%)',
-                                      borderRadius: '0 0 4px 4px',
-                                      boxShadow: '0 2px 8px rgba(85, 87, 84, 0.25)',
-                                      border: '2px solid rgba(96, 108, 96, 0.3)'
-                                    }}
-                                  />
+                                <div className="flex gap-2 sm:gap-3 mt-3">
+                                  {['#CBA990', '#EBD3B9', '#F5E1C0'].map((color, i) => (
+                                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#800A06]/20 shadow-sm" style={{ backgroundColor: color }} />
+                                  ))}
                                 </div>
                               </div>
                             </div>
+
                           ) : (
                             <p className={`${cormorant.className} text-[#800A06] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
                               {item.answer}
