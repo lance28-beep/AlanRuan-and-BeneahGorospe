@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 // Update this with your deployed Google Apps Script URL for Wedding Details
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJUFmgzBtYrFiekolom7_o8yvGTBPuCMNGKjCxFUC8s1Y6oYdLppCWxEAD-wD3ZWB-hg/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzX9Hk4wIb_Vh6-MD1luC66Oar_kqjef2V2VlfVC0Hwv6nEeO5UfbwlKUXDSm4My4TP/exec'
 
 // Wedding Details interface matching the Google Sheets structure
 export interface WeddingDetails {

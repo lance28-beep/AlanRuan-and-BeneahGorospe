@@ -15,7 +15,7 @@ export const siteConfig = {
   },
   details: {
     rsvp: {
-      deadline: "April 9, 2026",
+      deadline: "April 11, 2026",
       contact: "Beneah Gorospe",
       phone: "+1 (646) 331-8829",
       email: "beagorospe18@gmail.com",
