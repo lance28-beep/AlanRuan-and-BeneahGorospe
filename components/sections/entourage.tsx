@@ -4,18 +4,12 @@ import React from "react"
 import { useState, useEffect, useMemo, useRef } from "react"
 import { siteConfig } from "@/content/site"
 import { Loader2, Users } from "lucide-react"
-import { Cormorant_Garamond, Great_Vibes } from "next/font/google"
-import { bequta } from "@/app/fonts"
+import { Montserrat } from "next/font/google"
 import Image from "next/image"
 
-const cormorant = Cormorant_Garamond({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400"],
-})
-
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
 })
 
 interface EntourageMember {
@@ -166,14 +160,15 @@ export function Entourage() {
     return (
       <h3
         className={`
-          relative ${bequta.className}
+          relative ${montserrat.className}
           text-[0.6rem] sm:text-xs md:text-sm lg:text-base
-          font-bold tracking-[0.18em]
-          uppercase text-[#C44569]
+          font-semibold tracking-[0.2em]
+          uppercase text-[#8B1E1E]
           mb-1 sm:mb-1.5 md:mb-2
           ${textAlign} ${className}
           transition-all duration-300 whitespace-nowrap
         `}
+        style={{ textShadow: "0 3px 12px rgba(0,0,0,0.7)" }}
       >
         {children}
       </h3>
@@ -202,13 +197,13 @@ export function Entourage() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#C44569]/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 rounded-md" />
 
         <p
-          className={`relative text-[#C44569] text-[11px] sm:text-[13px] md:text-sm lg:text-base font-semibold ${textAlign} group-hover/item:text-[#C44569] transition-all duration-300`}
+          className={`${montserrat.className} relative text-[#3C2A25] text-[11px] sm:text-[13px] md:text-sm lg:text-base font-semibold ${textAlign} group-hover/item:text-[#5E1414] transition-all duration-300`}
         >
           {member.Name}
         </p>
         {showRole && member.RoleTitle && (
           <p
-            className={`relative text-[#C44569]/70 text-[9px] sm:text-[10px] md:text-[10px] lg:text-xs font-medium mt-0 leading-tight ${textAlign} tracking-wide uppercase group-hover/item:text-[#C44569] transition-colors duration-300`}
+            className={`${montserrat.className} relative text-[#5A3A32]/80 text-[9px] sm:text-[10px] md:text-[10px] lg:text-xs font-medium mt-0 leading-tight ${textAlign} tracking-[0.16em] uppercase group-hover/item:text-[#8B1E1E] transition-colors duration-300`}
           >
             {member.RoleTitle}
           </p>
@@ -263,12 +258,14 @@ export function Entourage() {
     <section
       ref={sectionRef}
       id="entourage"
-      className="relative py-8 md:py-10 lg:py-12 overflow-hidden"
+      className="relative py-10 md:py-14 lg:py-16 overflow-hidden bg-[#8B1E1E]"
     >
       {/* Background */}
-      <div 
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#FBCCC9]/90 to-[#FFF7F6]/90"
-      />
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(243,198,108,0.42)_0%,_transparent_55%)] opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(243,198,108,0.32)_0%,_transparent_60%)] opacity-80" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05]" />
+      </div>
       
       {/* Flower decoration - top left corner */}
       <div className="absolute left-0 top-0 z-0 pointer-events-none">
@@ -277,9 +274,9 @@ export function Entourage() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-y-[-1]"
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-y-[-1]"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
       
@@ -290,9 +287,9 @@ export function Entourage() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-x-[-1] scale-y-[-1]"
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-x-[-1] scale-y-[-1]"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
       
@@ -303,9 +300,9 @@ export function Entourage() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60"
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
       
@@ -316,32 +313,37 @@ export function Entourage() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-x-[-1]"
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-x-[-1]"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+      v
         />
       </div>
 
       {/* Section Header */}
-      <div className={`relative z-30 text-center mb-4 sm:mb-5 md:mb-6 px-3 sm:px-4 pt-12 sm:pt-16 md:pt-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+      <div
+        className={`relative z-30 text-center mb-6 sm:mb-7 md:mb-8 px-3 sm:px-4 pt-12 sm:pt-16 md:pt-20 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+        }`}
+      >
         {/* Small label */}
         <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#C44569] mb-2 font-bold`}
+          className={`${montserrat.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#FDEFD0] mb-2`}
         >
           Those who stand with {siteConfig.couple.groomNickname} &amp; {siteConfig.couple.brideNickname}
         </p>
 
         <h2
-          className={`${bequta.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#C44569] mb-1 sm:mb-2 md:mb-2.5 font-bold`}
+          className={`${montserrat.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#F6F1E8] mb-2 sm:mb-3 font-semibold uppercase`}
+          style={{ letterSpacing: "0.16em", textShadow: "0 4px 18px rgba(0,0,0,0.8)" }}
         >
           Wedding Entourage
         </h2>
 
         {/* Sublabel */}
         <p
-          className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#C44569] mb-2 sm:mb-2.5 md:mb-3 italic font-bold`}
+          className={`${montserrat.className} text-xs sm:text-sm md:text-base text-[#FDEFD0] mb-2 sm:mb-2.5 md:mb-3 italic`}
         >
-          Honoring those who share in our joy
+          Honoring the family and friends who share in our joy.
         </p>
       </div>
 
@@ -352,23 +354,27 @@ export function Entourage() {
         }`}
       >
         {/* Card with new theme */}
-        <div className="relative bg-white backdrop-blur-lg rounded-xl sm:rounded-2xl overflow-hidden border border-[#C44569]/30 shadow-[0_18px_40px_rgba(128,10,6,0.18)] transition-all duration-500 group">
+        <div className="relative bg-[#FDF6EA]/95 backdrop-blur-lg rounded-xl sm:rounded-2xl overflow-hidden border border-[#E0C5A2] shadow-[0_18px_40px_rgba(0,0,0,0.55)] transition-all duration-500 group">
           {/* Card content */}
           <div className="relative p-3 sm:p-4 md:p-5 z-10">
             {isLoading ? (
               <div className="flex items-center justify-center py-24 sm:py-28 md:py-32">
                 <div className="flex flex-col items-center gap-4">
-                  <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#C44569]/70" />
-                  <span className="text-[#C44569]/80 font-serif text-base sm:text-lg">Loading entourage...</span>
+                  <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#8B1E1E]/80" />
+                  <span className={`${montserrat.className} text-[#3C2A25] text-base sm:text-lg`}>
+                    Loading entourage...
+                  </span>
                 </div>
               </div>
             ) : error ? (
               <div className="flex items-center justify-center py-24 sm:py-28 md:py-32">
                 <div className="text-center">
-                  <p className="text-[#C44569] font-serif text-base sm:text-lg mb-3">{error}</p>
+                  <p className={`${montserrat.className} text-[#8B1E1E] text-base sm:text-lg mb-3`}>
+                    {error}
+                  </p>
                   <button
                     onClick={fetchEntourage}
-                    className="text-[#C44569]/90 hover:text-[#C44569] font-serif underline transition-colors duration-200"
+                    className={`${montserrat.className} text-[#F3C66C] hover:text-[#F3C66C]/90 underline transition-colors duration-200`}
                   >
                     Try again
                   </button>
@@ -376,8 +382,10 @@ export function Entourage() {
               </div>
             ) : entourage.length === 0 ? (
               <div className="text-center py-24 sm:py-28 md:py-32">
-                <Users className="h-14 w-14 sm:h-16 sm:w-16 text-[#C44569]/30 mx-auto mb-4" />
-                <p className="text-[#C44569]/70 font-serif text-base sm:text-lg">No entourage members yet</p>
+                <Users className="h-14 w-14 sm:h-16 sm:w-16 text-[#8B1E1E]/35 mx-auto mb-4" />
+                <p className={`${montserrat.className} text-[#3C2A25]/80 text-base sm:text-lg`}>
+                  No entourage members yet
+                </p>
               </div>
             ) : (
             <>

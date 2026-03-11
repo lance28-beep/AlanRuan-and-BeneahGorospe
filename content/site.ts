@@ -1,76 +1,77 @@
 export const siteConfig = {
   couple: {
-    bride: "Jennica Ebreo",
-    brideNickname: "Jennica",
-    groom: "Jojo Aguba",
-    groomNickname: "Jojo",
+    bride: "Beneah Gorospe",
+    brideNickname: "Beneah",
+    groom: "Alan Ruan",
+    groomNickname: "Alan",
   },
   wedding: {
-    date: "MAY 23, 2026",
-    time: "10:00 AM",
-    venue: "Mary Mediatrix of All Grace Parish",
+    date: "MAY 9, 2026",
+    time: "7:00 PM",
+    venue: "Golden Unicorn",
     tagline: "are getting married!",
-    theme: "Modern Filipiniana",
-    motif: "#87AE73, #9CAF88, #F5F5DC, #E6D5B8, #D2B48C",
+    theme: "Modern Imperial Chinese Banquet",
+    motif: "#89251E, #F3C66C, #D4A84B, #FCEFDD, #432F2A",
   },
   details: {
     rsvp: {
-      deadline: "April 23, 2026",
-      contact: "Monique Ogalesco",
-      phone: "647-622-5353",
+      deadline: "April 9, 2026",
+      contact: "Beneah Gorospe",
+      phone: "+1 (646) 331-8829",
+      email: "beagorospe18@gmail.com",
     },
   },
   ceremony: {
-    location: "Mary Mediatrix of All Grace Parish",
-    address: "Antipolo del Norte, Lipa City, Batangas",
-    venue: "Mary Mediatrix of All Grace Parish",
-    date: "May 23, 2026",
+    location: "Golden Unicorn",
+    address: "18 East Broadway, New York, NY 10002",
+    venue: "Golden Unicorn",
+    date: "May 9, 2026",
     day: "Saturday",
-    time: "10:00 AM",
-    entourageTime: "9:00 AM",
-    guestsTime: "9:30 AM",
+    time: "7:00 PM",
+    entourageTime: "6:00 PM",
+    guestsTime: "6:30 PM",
   },
   reception: {
-    location: "La Vida Resort and Events Center",
-    address: "Lodlod, Lipa City, Batangas",
-    venue: "La Vida Resort and Events Center",
-    date: "May 23, 2026",
-    time: "12:00 PM",
+    location: "Golden Unicorn",
+    address: "18 East Broadway, New York, NY 10002",
+    venue: "Golden Unicorn",
+    date: "May 9, 2026",
+    time: "7:00 PM",
   },
   dressCode: {
-    theme: "Modern Filipiniana",
-    colors: ["#CBA990", "#EBD3B9", "#F5E1C0"],
+    theme: "Modern Imperial Chinese Banquet",
+    colors: ["#89251E", "#F3C66C", "#D4A84B", "#FCEFDD", "#432F2A"],
     sponsors: {
-      male: "Barong & Black Pants",
-      female: "Long Gown"
+      male: "Suit or Tuxedo",
+      female: "Formal Gown or Qipao",
     },
     guests: {
-      gents: "Semi-Formal",
-      ladies: "Semi-Formal"
+      gents: "Black Tie / Formal",
+      ladies: "Black Tie / Formal",
     },
-    note: "We kindly request our guests to dress in semi-formal attire following our color palette."
+    note: "We kindly request our guests to dress in black-tie or formal attire. Traditional Chinese-inspired attire is warmly welcomed.",
   },
   narratives: {
-    ourStory: `God works in mysterious ways — sometimes He starts a story in the most ordinary moments. We had no idea that what began so simply would become the greatest adventure of our lives.`,
-    groom: `The first time Jojo saw Jennica, time seemed to slow down. It was an ordinary day that instantly became unforgettable: one smile, one hello, and suddenly his world had a new center. He didn't have the perfect words ready, but he knew he had met someone who felt like home.
+    ourStory: `Two worlds, one destiny — their story began in the city that never sleeps, where chance meetings become forever moments. What started as a quiet connection grew into a love as enduring as the culture they celebrate together.`,
+    groom: `Alan first noticed Beneah across a crowded room — her warmth and laughter drawing him in before he even found the words to introduce himself. A quiet observer by nature, he found himself speaking freely around her, sharing parts of himself he rarely showed the world.
 
-Early conversations turned into late-night talks, sharing dreams, favorite meals, and whispered prayers for a future together. With every small adventure—coffee runs, long drives, quiet walks—Jojo found himself choosing her over and over again. He loved how she laughed freely, how she listened with her whole heart, and how her faith steadied him.
+Through the seasons of New York — its cold winters and electric summers — Alan discovered in Beneah a partner who matched his ambition with her grace, and his silence with her gentle understanding. Every moment with her felt like coming home.
 
-There were seasons of distance and long workdays, but every reunion reminded him why he stayed patient: because Jennica was worth every mile and every minute apart. When he finally knelt to ask for her hand, it wasn't a question of "if," only "when can we start forever?"`,
-    bride: `Jennica remembers the first time Jojo said her name. It was gentle but sure, a kindness that made her feel both seen and safe. In that softness, she found a partner who met her with the same grace she prayed to give.
+When the time came, he knew there was only one question left to ask.`,
+    bride: `Beneah had always believed that love, when real, would feel easy. And from the first honest conversation with Alan, she understood what that meant — not effortless, but sure. The kind of certainty that holds steady even on the hard days.
 
-Jojo's steadiness won her heart: the way he showed up, even when schedules were tight, and how he always found lightness in the small things. He celebrated her wins, held space for her worries, and never hesitated to choose "us" in every decision.
+She fell for his quiet strength, his patience, and the way he made her feel like the most important person in any room. He listened when others were silent, and he showed up — consistently, generously, without asking for recognition.
 
-Now, as they prepare to say yes before God and the people they love most, Jennica is grateful for the patience, humor, and hope Jojo brings to every day. She knows this next chapter is just the start of the love story they get to write together.`,
+Now, standing at the beginning of this new chapter, Beneah is grateful for a love that feels like both an adventure and a safe place to land.`,
   },
   colors: {
-    primary: "#87AE73",
-    secondary: "#F5F5DC",
+    primary: "#89251E",
+    secondary: "#F3C66C",
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1lk45T1tGmm5_Oa48ABV_Cgrnpp1T2kTk?usp=sharing",
-    hashtag: "#JojoAndJennicaSayIDo",
-    instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
+    hashtag: "#AlanAndBeneahSayIDo",
+    instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We would love to see your snaps!",
   },
 }
 

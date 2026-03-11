@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Cormorant_Garamond, Inter } from "next/font/google";
-import { bequta } from "@/app/fonts"
-
-import { TornPaperEdge } from './TornPaperEdge';
+import React, { useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
+import { motion, AnimatePresence } from "motion/react"
+import { Montserrat } from "next/font/google"
+import { TornPaperEdge } from "./TornPaperEdge"
 
 /*
 const cinzel = Cinzel({
@@ -13,14 +11,9 @@ const cinzel = Cinzel({
 })
 */
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: "900",
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
 })
 
 interface StorySectionProps {
@@ -46,9 +39,9 @@ export const StorySection: React.FC<StorySectionProps> = ({
   year,
   month
 }) => {
-  const isDark = theme === 'dark';
-  const bgColor = isDark ? 'bg-[#FBCCC9]' : 'bg-[#F0DFCE] relative z-10';
-  const textColor = isDark ? 'text-[#C44569]' : 'text-[#C44569]';
+  const isDark = theme === "dark"
+  const bgColor = isDark ? "bg-[#8B1E1E]" : "bg-[#FDF6EA] relative z-10"
+  const textColor = isDark ? "text-[#FEF7DB]" : "text-[#3C2A25]"
   
   // Animation Hook
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -87,17 +80,18 @@ export const StorySection: React.FC<StorySectionProps> = ({
   }, []);
 
   // Visual Styles
-  const imageFrameClass = isDark 
-    ? 'bg-white p-1.5 md:p-3 shadow-lg' 
-    : 'bg-white p-1.5 md:p-3 shadow-md';
+  const imageFrameClass = isDark
+    ? "bg-[#FDF6EA] p-1.5 md:p-3 shadow-lg shadow-black/35"
+    : "bg-white p-1.5 md:p-3 shadow-md shadow-black/15"
 
   // Rotation
-  const rotation = layout === 'image-left' ? 'rotate-1 md:rotate-2' : '-rotate-1 md:-rotate-2';
+  const rotation = layout === "image-left" ? "rotate-1 md:rotate-2" : "-rotate-1 md:-rotate-2"
 
   // FORCED Side-by-Side Layout (Visual structure preserved on Mobile)
   // Instead of switching to flex-col, we keep flex-row (or reverse)
-  const flexDirection = layout === 'image-left' ? 'flex-row' : 'flex-row-reverse';
-  const textAlignment = layout === 'image-left' ? 'text-left' : 'text-left md:text-right'; // Keep text left aligned usually looks better in tight columns, or alternate
+  const flexDirection = layout === "image-left" ? "flex-row" : "flex-row-reverse"
+  const textAlignment =
+    layout === "image-left" ? "text-left" : "text-left md:text-right"
 
   return (
     <div className={`${bgColor} relative`}>
@@ -106,16 +100,16 @@ export const StorySection: React.FC<StorySectionProps> = ({
       {!isDark && (
         <>
           {/* Top Tear */}
-          <div className="absolute top-0 left-0 w-full -mt-[8px] md:-mt-[20px] z-20 text-[#F0DFCE] pointer-events-none">
+          <div className="absolute top-0 left-0 w-full -mt-[8px] md:-mt-[20px] z-20 text-[#8B1E1E] pointer-events-none">
              <TornPaperEdge flipped={true} />
           </div>
           {/* Bottom Tear */}
-          <div className="absolute bottom-0 left-0 w-full -mb-[8px] md:-mb-[20px] z-20 text-[#F0DFCE] pointer-events-none">
+          <div className="absolute bottom-0 left-0 w-full -mb-[8px] md:-mb-[20px] z-20 text-[#8B1E1E] pointer-events-none">
              <TornPaperEdge flipped={false} />
           </div>
         </>
       )}
-      <div 
+      <div
         ref={sectionRef}
         className={`container mx-auto px-2 md:px-12 py-12 md:py-32 relative z-10 transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
       >
@@ -141,39 +135,61 @@ export const StorySection: React.FC<StorySectionProps> = ({
                      className="w-full h-auto transition-transform duration-1000 group-hover:scale-105 block"
                    />
                    {isDark ? (
-             <div className="absolute inset-0 bg-black/5 mix-blend-multiply pointer-events-none z-10" />
-           ) : null}
+                     <div className="absolute inset-0 bg-black/15 mix-blend-multiply pointer-events-none z-10" />
+                   ) : null}
                  </div>
                </div>
             </div>
             
             {(year || month) && (
-              <div className={`text-center ${inter.className} ${textColor}
+              <div
+                className={`text-center ${montserrat.className} ${textColor}
                 transition-all duration-1000 delay-500
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-              `}>
-                {month && <div className="text-xs md:text-xl tracking-[0.2em] uppercase mb-1 font-black">{month}</div>}
-                {year && <div className="text-xl md:text-4xl font-black tracking-widest">{year}</div>}
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+              `}
+              >
+                {month && (
+                  <div className="text-xs md:text-sm tracking-[0.26em] uppercase mb-1 font-semibold">
+                    {month}
+                  </div>
+                )}
+                {year && (
+                  <div className="text-lg md:text-2xl font-semibold tracking-[0.28em] uppercase">
+                    {year}
+                  </div>
+                )}
               </div>
             )}
           </div>
           {/* Text Column - Approx 55% width on mobile */}
-          <div className={`w-[55%] md:w-5/12 ${textColor}`}>
+          <div className={`w-[55%] md:w-5/12 ${textColor} ${montserrat.className} ${textAlignment}`}>
             {title && (
-              <h2 className={`${bequta.className} text-2xl md:text-6xl mb-2 md:mb-6 tracking-wide leading-none
+              <h2
+                className={`text-xl sm:text-2xl md:text-4xl mb-2 md:mb-6 tracking-[0.18em] leading-tight
                 transition-all duration-1000 delay-500
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                ${isDark ? 'text-[#C44569]' : 'text-[#C44569]'}
-              `}>
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+              `}
+                style={{
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  color: isDark ? "#FEF7DB" : "#2B1C17",
+                  textShadow: isDark ? "0 3px 12px rgba(0,0,0,0.7)" : "none",
+                }}
+              >
                 {title}
               </h2>
             )}
             
-            <div className={`${cormorant.className} text-[11px] leading-[1.3] sm:text-sm md:text-2xl md:leading-relaxed space-y-2 md:space-y-6
+            <div
+              className={`text-[11px] leading-[1.4] sm:text-xs md:text-base md:leading-relaxed space-y-2 md:space-y-4
               transition-all duration-1000 delay-700
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-              ${theme === 'light' ? 'italic font-normal' : 'font-light'}
-            `}>
+              ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+            `}
+              style={{
+                fontWeight: 400,
+                color: isDark ? "#FDEFD0" : "#4A3A36",
+              }}
+            >
               {text}
             </div>
           </div>

@@ -3,19 +3,13 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { Section } from "@/components/section"
-import { Cormorant_Garamond } from "next/font/google"
-import { bequta } from "@/app/fonts"
+import { Montserrat } from "next/font/google"
 import { siteConfig } from "@/content/site"
 
-const cormorant = Cormorant_Garamond({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 })
-
-const arialFont = {
-  className: "font-sans",
-  style: { fontFamily: "Arial, sans-serif" }
-}
 
 /*
 const cinzel = Cinzel({
@@ -58,7 +52,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is there a dress code?",
     answer:
-      "Please refer to the attire guide below.",
+      "Please refer to the attire guide below. ",
   },
   {
     question: "Will there be assigned seating?",
@@ -68,7 +62,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is there parking available?",
     answer:
-      "Yes, parking is available at both venues. Please follow the parking signs and instructions from our venue coordinators.",
+      "Street parking only. There is a close by parking garage see page 7 (hyperlink) for more info. ",
   },
   {
     question: "Can I take photos and videos during the ceremony?",
@@ -99,39 +93,58 @@ export function FAQ() {
       id="faq"
       className="relative py-12 md:py-16 lg:py-20 overflow-hidden"
     >
+      {/* Background */}
+      {/* <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[#8B1E1E]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(243,198,108,0.42)_0%,_transparent_52%)] opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(243,198,108,0.3)_0%,_transparent_55%)] opacity-80" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.04]" />
+      </div> */}
+
       {/* Section Header */}
       <div className="relative z-30 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
         {/* Small label */}
         <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-white mb-2`}
+          className={`${montserrat.className} text-[0.7rem] sm:text-xs md:text-sm uppercase text-[#F3C66C] mb-2`}
+          style={{
+            letterSpacing: "0.28em",
+          }}
         >
           Everything You Need to Know
         </p>
 
         <h2
-          className={`${bequta.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4`}
+          className={`${montserrat.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FEF7DB] mb-1.5 sm:mb-3 md:mb-4`}
+          style={{
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+            textShadow: "0 4px 18px rgba(0,0,0,0.8)",
+            fontWeight: 600,
+          }}
         >
           Frequently Asked Questions
         </h2>
         
-        <p className={`${cormorant.className} text-xs sm:text-sm md:text-base text-white font-light max-w-xl mx-auto leading-relaxed px-2 mb-2 sm:mb-3`}>
+        <p
+          className={`${montserrat.className} text-xs sm:text-sm md:text-base text-[#FDEFD0] font-normal max-w-xl mx-auto leading-relaxed px-2 mb-2 sm:mb-3`}
+        >
           Common questions answered to help you prepare for our special day
         </p>
 
         {/* Simple divider */}
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-white/60" />
-          <div className="w-1.5 h-1.5 bg-white/80 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-white/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-white/80 rounded-full" />
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-white/60" />
+          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#F3C66C]/45" />
+          <div className="w-1.5 h-1.5 bg-[#F3C66C] rounded-full shadow-[0_0_14px_rgba(243,198,108,0.7)]" />
+          <div className="w-1.5 h-1.5 bg-[#F3C66C]/60 rounded-full" />
+          <div className="w-1.5 h-1.5 bg-[#F3C66C] rounded-full" />
+          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#F3C66C]/45" />
         </div>
       </div>
 
       {/* FAQ content */}
       <div className="relative z-30 max-w-4xl mx-auto px-3 sm:px-5">
         {/* Main card */}
-        <div className="relative bg-white backdrop-blur-md border border-[#800A06]/30 rounded-lg sm:rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(128,10,6,0.18)] overflow-hidden">
+        <div className="relative bg-[#FDF6EA]/95 backdrop-blur-md border border-[#E0C5A2] rounded-lg sm:rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.45)] overflow-hidden">
           
           {/* FAQ items */}
           <div className="relative p-2.5 sm:p-4 md:p-5 lg:p-6">
@@ -142,20 +155,22 @@ export function FAQ() {
                 return (
                   <div
                     key={index}
-                    className="rounded-lg sm:rounded-xl border border-[#800A06]/30 bg-white hover:border-[#800A06]/60 hover:bg-white transition-all duration-300 overflow-hidden shadow-sm"
+                    className="rounded-lg sm:rounded-xl border border-[#E0C5A2]/70 bg-[#FDF6EA]/95 hover:border-[#F3C66C] hover:bg-[#FFF8EC] transition-all duration-300 overflow-hidden shadow-sm shadow-black/10"
                   >
                     <button
                       onClick={() => toggleItem(index)}
-                      className="group w-full px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#606C60]/50 focus-visible:ring-offset-2 transition-colors"
+                      className="group w-full px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#F3C66C]/60 focus-visible:ring-offset-2 transition-colors"
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                     >
-                      <span className={`${arialFont.className} font-normal text-[#800A06] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#671107]`} style={arialFont.style}>
+                      <span
+                        className={`${montserrat.className} font-medium text-[#3C2A25] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#8B1E1E]`}
+                      >
                         {item.question}
                       </span>
                       <ChevronDown
                         size={18}
-                        className={`text-[#800A06]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#800A06]" : ""} w-4 h-4 sm:w-5 sm:h-5`}
+                        className={`text-[#8B1E1E]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#F3C66C]" : ""} w-4 h-4 sm:w-5 sm:h-5`}
                         aria-hidden
                       />
                     </button>
@@ -168,13 +183,15 @@ export function FAQ() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-white border-t border-[#800A06]/30">
+                        <div className="px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-[#FFF8EC] border-t border-[#E0C5A2]/70">
                           {item.answer.includes("[RSVP_LINK]") ? (
-                            <p className={`${cormorant.className} text-[#800A06] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
+                            <p
+                              className={`${montserrat.className} text-[#3C2A25] font-normal leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line`}
+                            >
                               {item.answer.split("[RSVP_LINK]")[0]}
                               <a 
                                 href="#guest-list" 
-                                className="text-[#800A06] underline font-bold hover:text-[#671107] transition-colors"
+                                className="text-[#8B1E1E] underline font-semibold hover:text-[#F3C66C] transition-colors"
                                 onClick={(e) => {
                                   e.preventDefault()
                                   document.getElementById('guest-list')?.scrollIntoView({ behavior: 'smooth' })
@@ -187,35 +204,63 @@ export function FAQ() {
                           ) : item.question === "Is there a dress code?" ? (
                             <div className="space-y-6 sm:space-y-8 pt-2">
                               {/* Principal Sponsor Attire */}
-                              <div className="space-y-2 sm:space-y-3">
-                                <h4 className={`${cormorant.className} text-[#800A06] font-bold text-sm sm:text-base md:text-lg uppercase tracking-widest`}>Principal Sponsor Attire</h4>
-                                <div className={`${cormorant.className} text-[#800A06] text-xs sm:text-sm md:text-base space-y-1`}>
+                              {/* <div className="space-y-2 sm:space-y-3">
+                                <h4
+                                  className={`${montserrat.className} text-[#8B1E1E] font-semibold text-sm sm:text-base md:text-lg uppercase`}
+                                  style={{ letterSpacing: "0.18em" }}
+                                >
+                                  Principal Sponsor Attire
+                                </h4>
+                                <div className={`${montserrat.className} text-[#3C2A25] text-xs sm:text-sm md:text-base space-y-1`}>
                                   <p><span className="font-semibold">Ninang:</span> Long Gown</p>
                                   <p><span className="font-semibold">Ninong:</span> Barong & Black Pants</p>
                                 </div>
                                 <div className="flex gap-2 sm:gap-3 mt-3">
-                                  {['#CBA990', '#EBD3B9', '#F5E1C0'].map((color, i) => (
-                                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#800A06]/20 shadow-sm" style={{ backgroundColor: color }} />
+                                  {["#8B1E1E", "#C45A3B", "#D97B2D", "#F3C66C", "#F5D9A6"].map((color, i) => (
+                                    <div
+                                      key={i}
+                                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#E0C5A2]/70 shadow-sm shadow-black/10"
+                                      style={{ backgroundColor: color }}
+                                    />
                                   ))}
                                 </div>
-                              </div>
+                              </div> */}
 
                               {/* Guest Attire */}
                               <div className="space-y-2 sm:space-y-3">
-                                <h4 className={`${cormorant.className} text-[#800A06] font-bold text-sm sm:text-base md:text-lg uppercase tracking-widest`}>Guest Attire</h4>
-                                <div className={`${cormorant.className} text-[#800A06] text-xs sm:text-sm md:text-base space-y-1`}>
-                                  <p>Semi-Formal</p>
-                                </div>
-                                <div className="flex gap-2 sm:gap-3 mt-3">
-                                  {['#CBA990', '#EBD3B9', '#F5E1C0'].map((color, i) => (
-                                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#800A06]/20 shadow-sm" style={{ backgroundColor: color }} />
+                                <h4
+                                  className={`${montserrat.className} text-[#8B1E1E] font-semibold text-sm sm:text-base md:text-lg uppercase`}
+                                  style={{ letterSpacing: "0.18em" }}
+                                >
+                                  Guest Attire
+                                </h4>
+                                <div className="text-center pt-3 sm:pt-4 border-t border-[#E0C5A2]/70 px-3 sm:px-4">
+                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-montserrat)] text-[#3C2A25] leading-relaxed mb-2">
+                  <span className="font-semibold">Dress code:</span> Semi‑formal.
+                </p>
+                <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-montserrat)] text-[#5A3A32] leading-relaxed mb-2">
+                  <span className="font-semibold">Palette inspiration:</span> sunset tones &mdash; deep red, warm terracotta, soft gold, champagne, and blush.
+                </p>
+                <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-montserrat)] text-[#5A3A32] leading-relaxed italic">
+                  Kindly avoid jeans. The colors are a guide, so please feel free to choose what feels comfortable and elegant for you.
+                </p>
+              </div>
+                                <div className="flex gap-2 sm:gap-3 mt-3 justify-center">
+                                  {["#8B1E1E", "#C45A3B", "#D97B2D", "#F3C66C", "#F5D9A6"].map((color, i) => (
+                                    <div
+                                      key={i}
+                                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#E0C5A2]/70 shadow-sm shadow-black/10"
+                                      style={{ backgroundColor: color }}
+                                    />
                                   ))}
                                 </div>
                               </div>
                             </div>
 
                           ) : (
-                            <p className={`${cormorant.className} text-[#800A06] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
+                            <p
+                              className={`${montserrat.className} text-[#3C2A25] font-normal leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line`}
+                            >
                               {item.answer}
                             </p>
                           )}

@@ -4,19 +4,23 @@ import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Section } from "@/components/section"
-import { bequta } from "@/app/fonts"
+import { Montserrat } from "next/font/google"
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+})
 // Removed circular gallery in favor of a responsive masonry layout
 
 const galleryItems = [
   { image: "/mobile-background/couple (4).jpg", text: " " },   
-  { image: "/mobile-background/couple (1).jpg", text: " " },
-  { image: "/mobile-background/couple (5).jpg", text: " " },
-  { image: "/mobile-background/couple (6).jpg", text: " " },
-  { image: "/mobile-background/couple (7).jpg", text: " " },
-  { image: "/mobile-background/couple (2).jpg", text: " " },
-  { image: "/mobile-background/couple (3).jpg", text: " " },
-  { image: "/mobile-background/couple (8).jpg", text: " " },
-  { image: "/mobile-background/couple (9).jpg", text: " " },
+  { image: "/desktop-background/couple (4).jpg", text: " " },
+  { image: "/desktop-background/couple (6).JPG", text: " " },
+  { image: "/desktop-background/couple (7).JPG", text: " " },
+  { image: "/desktop-background/couple (5).JPG", text: " " },
+  { image: "/desktop-background/couple (9).JPG", text: " " },
+  { image: "/desktop-background/couple (8).JPG", text: " " },
+  { image: "/desktop-background/couple (11).JPG", text: " " },
 ]
 
 export function Gallery() {
@@ -96,13 +100,14 @@ export function Gallery() {
   return (
     <Section
       id="gallery"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden bg-[#8B1E1E]"
     >
       {/* Semi-transparent overlay for better text readability */}
-      <div className="absolute inset-0 bg-[#FFF7F6] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#FBCCC9_0%,_transparent_40%)] opacity-70 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_#FBCCC9_0%,_transparent_40%)] opacity-70 pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(243,198,108,0.42)_0%,_transparent_50%)] opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(243,198,108,0.32)_0%,_transparent_55%)] opacity-80" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.06]" />
+      </div>
 
       {/* Flower decoration - top left corner */}
       <div className="absolute left-0 top-0 z-0 pointer-events-none">
@@ -111,8 +116,8 @@ export function Gallery() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-y-[-1]"
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-y-[-1]"
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
 
@@ -123,8 +128,8 @@ export function Gallery() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-x-[-1] scale-y-[-1]"
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-x-[-1] scale-y-[-1]"
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
 
@@ -135,8 +140,8 @@ export function Gallery() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60"
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65"
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
       
@@ -147,23 +152,31 @@ export function Gallery() {
           alt="Flower decoration"
           width={300}
           height={300}
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-x-[-1]"
-          style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-65 scale-x-[-1]"
+          // style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(34%) saturate(1637%) hue-rotate(309deg) brightness(91%) contrast(92%)' }}
         />
       </div>
 
       {/* Header */}
       <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#C44569] to-transparent" />
+        <div className="flex items-center justify-center gap-2 mb-4 sm:mb-5">
+          <div className="h-px w-16 sm:w-24 bg-[#F3C66C]/45" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#F3C66C] shadow-[0_0_14px_rgba(243,198,108,0.7)]" />
+          <div className="h-px w-16 sm:w-24 bg-[#F3C66C]/45" />
         </div>
-        <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl ${bequta.className} font-normal text-[#C44569] mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow`}>
+        <h2
+          className={`${montserrat.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#FEF7DB] mb-3 sm:mb-4 uppercase`}
+          style={{
+            letterSpacing: "0.16em",
+            textShadow: "0 4px 18px rgba(0,0,0,0.8)",
+            fontWeight: 600,
+          }}
+        >
           Our Moments
         </h2>
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#C44569] to-transparent" />
-        </div>
-        <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#C44569] font-light max-w-xl mx-auto leading-relaxed tracking-wide px-4">
+        <p
+          className={`${montserrat.className} text-xs sm:text-sm md:text-base text-[#FDEFD0] font-normal max-w-xl mx-auto leading-relaxed tracking-[0.14em] px-4`}
+        >
           Every moment, a treasured memory made eternal
         </p>
       </div>
@@ -187,8 +200,8 @@ export function Gallery() {
                     {galleryItems.map((item, index) => (
                       <button
                         key={item.image + index}
-                        type="button"
-                        className="group relative snap-center shrink-0 w-[82%] overflow-hidden rounded-lg bg-white/80 backdrop-blur-sm border border-[#C44569]/20 shadow-lg active:shadow-xl active:border-[#C44569]/60 transition-all duration-300"
+                      type="button"
+                      className="group relative snap-center shrink-0 w-[82%] overflow-hidden rounded-lg bg-[#FDF6EA]/90 backdrop-blur-sm border border-[#E0C5A2]/60 shadow-[0_12px_30px_rgba(0,0,0,0.45)] active:shadow-[0_16px_40px_rgba(0,0,0,0.6)] active:border-[#F3C66C]/80 transition-all duration-300"
                         onClick={() => {
                           setSelectedImage(item)
                           setCurrentIndex(index)
@@ -196,7 +209,7 @@ export function Gallery() {
                         aria-label={`Open image ${index + 1}`}
                       >
                         {/* Subtle glow on active (mobile) */}
-                        <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C44569]/15 to-[#C44569]/5 rounded-lg opacity-0 group-active:opacity-100 transition-opacity duration-300 blur-sm" />
+                        <div className="absolute -inset-0.5 bg-gradient-to-br from-[#F3C66C]/22 to-transparent rounded-lg opacity-0 group-active:opacity-100 transition-opacity duration-300 blur-sm" />
 
                         <div className="relative aspect-[3/4] overflow-hidden">
                           <img
@@ -207,11 +220,11 @@ export function Gallery() {
                             sizes="90vw"
                             className="w-full h-full object-cover transition-transform duration-500 group-active:scale-[1.02]"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-active:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-active:opacity-100 transition-opacity duration-300" />
                         </div>
 
-                        <div className="absolute top-2 right-2 bg-[#C44569]/60 backdrop-blur-sm rounded-full px-2 py-1">
-                          <span className="text-xs font-medium text-white">
+                        <div className="absolute top-2 right-2 bg-black/55 backdrop-blur-sm rounded-full px-2 py-1 border border-[#F3C66C]/60">
+                          <span className={`${montserrat.className} text-[0.65rem] font-medium text-[#FDEFD0] tracking-[0.14em] uppercase`}>
                             {index + 1}/{galleryItems.length}
                           </span>
                         </div>
@@ -219,7 +232,9 @@ export function Gallery() {
                     ))}
                   </div>
 
-                  <p className="mt-2 text-center text-xs font-[family-name:var(--font-crimson)] text-[#C44569] tracking-wide">
+                  <p
+                    className={`${montserrat.className} mt-2 text-center text-[0.68rem] text-[#FDEFD0] tracking-[0.16em] uppercase`}
+                  >
                     Swipe to slide
                   </p>
                 </div>
@@ -230,7 +245,7 @@ export function Gallery() {
                     <button
                       key={item.image + index}
                       type="button"
-                      className="group relative w-full overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm border border-[#C44569]/20 shadow-lg hover:shadow-xl hover:border-[#C44569]/60 transition-all duration-300"
+                      className="group relative w-full overflow-hidden rounded-xl bg-[#FDF6EA]/90 backdrop-blur-sm border border-[#E0C5A2]/60 shadow-[0_12px_30px_rgba(0,0,0,0.45)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.6)] hover:border-[#F3C66C]/80 transition-all duration-300"
                       onClick={() => {
                         setSelectedImage(item)
                         setCurrentIndex(index)
@@ -238,7 +253,7 @@ export function Gallery() {
                       aria-label={`Open image ${index + 1}`}
                     >
                       {/* Subtle glow on hover */}
-                      <div className="absolute -inset-0.5 bg-gradient-to-br from-[#C44569]/15 to-[#C44569]/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                      <div className="absolute -inset-0.5 bg-gradient-to-br from-[#F3C66C]/22 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
 
                       <div className="relative aspect-[3/4] md:aspect-square overflow-hidden">
                         <img
@@ -250,12 +265,12 @@ export function Gallery() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
 
                       {/* Image counter badge */}
-                      <div className="absolute top-2 right-2 bg-[#C44569]/60 backdrop-blur-sm rounded-full px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-medium text-white">
+                      <div className="absolute top-2 right-2 bg-black/55 backdrop-blur-sm rounded-full px-2 py-1 border border-[#F3C66C]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className={`${montserrat.className} text-[0.65rem] font-medium text-[#FDEFD0] tracking-[0.14em] uppercase`}>
                           {index + 1}/{galleryItems.length}
                         </span>
                       </div>
@@ -270,7 +285,7 @@ export function Gallery() {
               <div className="mt-10 sm:mt-12 flex justify-center">
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center justify-center rounded-full px-7 py-3 text-sm sm:text-base font-[family-name:var(--font-cinzel)] font-normal tracking-[0.16em] bg-[#C44569] text-white border-2 border-[#C44569] shadow-md hover:shadow-lg hover:bg-[#C44569]/90 hover:border-[#C44569]/90 transition-all duration-200 uppercase"
+                  className={`${montserrat.className} inline-flex items-center justify-center rounded-full px-7 py-3 text-[0.75rem] sm:text-sm tracking-[0.2em] bg-gradient-to-r from-[#F3C66C] to-[#D4A84B] text-[#43201B] border border-[#F3C66C]/80 shadow-[0_10px_26px_rgba(0,0,0,0.45)] hover:shadow-[0_14px_32px_rgba(0,0,0,0.6)] hover:from-[#D4A84B] hover:to-[#F3C66C] transition-all duration-200 uppercase font-medium`}
                 >
                   View more
                 </Link>

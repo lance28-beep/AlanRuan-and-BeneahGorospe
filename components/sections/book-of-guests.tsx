@@ -2,18 +2,12 @@
 
 import { useState, useEffect } from "react"
 import { Heart, RefreshCw, TrendingUp, Mail, Users, MapPin, Calendar, Crown } from "lucide-react"
-import { Cormorant_Garamond, Inter } from "next/font/google"
-import { bequta } from "@/app/fonts"
+import { Montserrat } from "next/font/google"
 import Image from "next/image"
 
-const cormorant = Cormorant_Garamond({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400"],
-})
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
 })
 
 /*
@@ -153,8 +147,9 @@ export function BookOfGuests() {
     >
       {/* Background */}
       <div 
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#FBCCC9]/90 to-[#FFF7F6]/90"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#8B1E1E]/90 to-[#8B1E1E]/90"
       />
+      
       
       {/* Flower decoration - top left corner */}
       <div className="absolute left-0 top-0 z-0 pointer-events-none">
@@ -165,7 +160,7 @@ export function BookOfGuests() {
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-y-[-1]"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
         />
       </div>
       
@@ -178,7 +173,7 @@ export function BookOfGuests() {
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-x-[-1] scale-y-[-1]"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
         />
       </div>
       
@@ -191,7 +186,7 @@ export function BookOfGuests() {
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
         />
       </div>
       
@@ -204,7 +199,7 @@ export function BookOfGuests() {
           height={300}
           className="w-auto h-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] opacity-60 scale-x-[-1]"
           priority={false}
-          style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
+          // style={{ filter: 'brightness(0) saturate(100%) invert(43%) sepia(35%) saturate(1210%) hue-rotate(303deg) brightness(85%) contrast(93%)' }}
         />
       </div>
 
@@ -212,28 +207,29 @@ export function BookOfGuests() {
       <div className="relative z-10 text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-3 md:px-4">
         {/* Small label */}
         <p
-          className={`${cormorant.className} text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.25em] text-[#C44569] mb-1 sm:mb-1.5`}
+          className={`${montserrat.className} text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.25em] text-[#FDEFD0] mb-1 sm:mb-1.5`}
         >
           Our Cherished Guests
         </p>
 
         <h2
-          className={`${bequta.className} text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#C44569] mb-1 sm:mb-2 md:mb-3`}
+          className={`${montserrat.className} text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#FEF7DB] mb-1 sm:mb-2 md:mb-3 uppercase`}
+          style={{ letterSpacing: "0.16em", textShadow: "0 4px 18px rgba(0,0,0,0.8)" }}
         >
           Book of Guests
         </h2>
 
-        <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm text-[#C44569] font-light max-w-lg mx-auto leading-relaxed px-2`}>
-          Meet the cherished souls joining us in celebration — your presence makes our day truly special
+        <p className={`${montserrat.className} text-[10px] sm:text-xs md:text-sm text-[#FDEFD0] font-normal max-w-lg mx-auto leading-relaxed px-2`}>
+          Meet the cherished souls joining us in celebration &mdash; your presence makes our day truly special.
         </p>
 
         {/* Decorative element */}
         <div className="flex items-center justify-center gap-1 sm:gap-1.5 mt-1.5 sm:mt-2.5 md:mt-3">
-          <div className="w-6 sm:w-10 md:w-12 h-px bg-gradient-to-r from-transparent via-[#C44569]/80 to-transparent" />
-          <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-[#C44569]/80 rounded-full" />
-          <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-[#C44569]/60 rounded-full" />
-          <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-[#C44569]/80 rounded-full" />
-          <div className="w-6 sm:w-10 md:w-12 h-px bg-gradient-to-l from-transparent via-[#C44569]/80 to-transparent" />
+          <div className="w-6 sm:w-10 md:w-12 h-px bg-[#F3C66C]/45" />
+          <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-[#F3C66C] rounded-full" />
+          <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-[#F3C66C]/80 rounded-full" />
+          <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-[#F3C66C] rounded-full" />
+          <div className="w-6 sm:w-10 md:w-12 h-px bg-[#F3C66C]/45" />
         </div>
       </div>
 
@@ -242,40 +238,40 @@ export function BookOfGuests() {
         {/* Stats card - Simplified */}
         <div className="text-center mb-2.5 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6">
           <div className="relative max-w-3xl mx-auto">
-            <div className="relative bg-white backdrop-blur-md border border-[#C44569]/30 rounded-lg sm:rounded-xl p-3 sm:p-5 md:p-6 shadow-md">
+            <div className="relative bg-[#FDF6EA]/95 backdrop-blur-md border border-[#E0C5A2] rounded-lg sm:rounded-xl p-3 sm:p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.5)]">
               
               {/* Refresh button */}
               <button
                 onClick={() => fetchGuests(true)}
                 disabled={isRefreshing}
-                className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 p-1 sm:p-1.5 rounded-full bg-[#C44569]/10 hover:bg-[#C44569]/20 transition-all duration-300 disabled:opacity-50 group z-10"
+                className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 p-1 sm:p-1.5 rounded-full bg-[#8B1E1E]/10 hover:bg-[#8B1E1E]/20 transition-all duration-300 disabled:opacity-50 group z-10"
                 title="Refresh counts"
               >
-                <RefreshCw className={`h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#C44569] transition-transform ${isRefreshing ? 'animate-spin' : 'group-hover:rotate-180'} duration-500`} />
+                <RefreshCw className={`h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#8B1E1E] transition-transform ${isRefreshing ? 'animate-spin' : 'group-hover:rotate-180'} duration-500`} />
               </button>
 
               {/* Main Count with inline text */}
               <div className="mb-1.5 sm:mb-2.5">
                 <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-                  <h3 className={`${inter.className} text-xl sm:text-3xl md:text-4xl font-bold text-[#C44569] transition-all duration-500 ${showIncrease ? 'scale-110 text-[#C44569]' : ''}`}>
+                  <h3 className={`${montserrat.className} text-xl sm:text-3xl md:text-4xl font-semibold text-[#3C2A25] transition-all duration-500 ${showIncrease ? 'scale-110 text-[#8B1E1E]' : ''}`}>
                     {totalGuests}
                   </h3>
                   {showIncrease && (
-                    <TrendingUp className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-[#C44569] animate-bounce" />
+                    <TrendingUp className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-[#8B1E1E] animate-bounce" />
                   )}
-                  <p className={`${inter.className} text-sm sm:text-lg md:text-xl text-[#C44569] font-medium leading-tight`}>
+                  <p className={`${montserrat.className} text-sm sm:text-lg md:text-xl text-[#3C2A25] font-medium leading-tight`}>
                     {totalGuests === 1 ? "Guest" : "Guests"} Celebrating With Us
                   </p>
                 </div>
               </div>
 
               {/* RSVP Count */}
-              <p className={`${inter.className} text-xs sm:text-base text-[#C44569]/90 mb-2 sm:mb-3`}>
+              <p className={`${montserrat.className} text-xs sm:text-base text-[#5A3A32] mb-2 sm:mb-3`}>
                 {rsvpCount} {rsvpCount === 1 ? "RSVP entry" : "RSVP entries"}
               </p>
               
               {/* Message */}
-              <p className={`${inter.className} text-[10px] sm:text-xs md:text-sm text-[#C44569]/90 leading-tight`}>
+              <p className={`${montserrat.className} text-[10px] sm:text-xs md:text-sm text-[#5A3A32] leading-tight`}>
                 Thank you for confirming your RSVP! Your presence means the world to us.
               </p>
             </div>
@@ -289,13 +285,13 @@ export function BookOfGuests() {
               {(showAllGuests ? confirmedGuests : confirmedGuests.slice(0, 5)).map((guest) => (
                 <div
                   key={guest.id}
-                  className="relative group bg-white rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#C44569]/30 hover:border-[#C44569]/60"
+                  className="relative group bg-white rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#8B1E1E]/30 hover:border-[#8B1E1E]/60"
                 >
                   {/* Guest Header */}
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-2.5 md:mb-3">
                     {/* Avatar - Mobile Optimized */}
                     <div className="relative flex-shrink-0">
-                      <div className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#C44569] flex items-center justify-center shadow-md ring-2 ring-white/50">
+                      <div className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#8B1E1E] flex items-center justify-center shadow-md ring-2 ring-white/50">
                         <span className="text-white font-semibold text-xs sm:text-base md:text-lg">
                           {getInitials(guest.name)}
                         </span>
@@ -303,7 +299,7 @@ export function BookOfGuests() {
                       {/* VIP Badge - Mobile Optimized */}
                       {guest.isVip && (
                         <div className="absolute -top-0.5 -right-0.5">
-                          <div className="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-gradient-to-r from-[#C44569] to-[#F5E1C0] rounded-full shadow-md">
+                          <div className="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-gradient-to-r from-[#8B1E1E] to-[#F5E1C0] rounded-full shadow-md">
                             <Crown className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3.5 md:w-3.5 text-white fill-current" />
                           </div>
                         </div>
@@ -313,11 +309,11 @@ export function BookOfGuests() {
                     {/* Guest Info - Mobile Optimized */}
                     <div className="flex-1 min-w-0">
                       <div className="mb-1 sm:mb-1.5">
-                        <h3 className={`${bequta.className} text-xs sm:text-base md:text-lg font-semibold sm:font-bold text-[#C44569] leading-tight mb-0.5`}>
+                        <h3 className={`${montserrat.className} text-xs sm:text-base md:text-lg font-semibold sm:font-bold text-[#3C2A25] leading-tight mb-0.5`}>
                           {guest.name}
                         </h3>
                         {guest.role && (
-                          <p className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs text-[#C44569]/80 font-medium`}>
+                          <p className={`${montserrat.className} text-[9px] sm:text-[10px] md:text-xs text-[#8B1E1E]/85 font-medium tracking-[0.14em] uppercase`}>
                             {guest.role}
                           </p>
                         )}
@@ -325,8 +321,8 @@ export function BookOfGuests() {
 
                       {/* Email - Mobile Optimized */}
                       {guest.email && (
-                        <div className="flex items-center gap-1 text-[9px] sm:text-[10px] md:text-xs text-[#C44569]/70 mb-1.5 sm:mb-2 md:mb-3">
-                          <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#C44569]/60 flex-shrink-0" />
+                        <div className="flex items-center gap-1 text-[9px] sm:text-[10px] md:text-xs text-[#8B1E1E]/80 mb-1.5 sm:mb-2 md:mb-3">
+                          <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#8B1E1E]/70 flex-shrink-0" />
                           <span className="truncate">{guest.email}</span>
                         </div>
                       )}
@@ -334,21 +330,21 @@ export function BookOfGuests() {
                       {/* Info Badges - Mobile Optimized */}
                       <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 md:gap-2 mb-1.5 sm:mb-2 md:mb-3">
                         {/* Guest count badge */}
-                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-[#C44569]/5 border border-[#C44569]/30 rounded sm:rounded-md md:rounded-lg">
-                          <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#C44569]" />
-                          <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#C44569]`}>
+                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-[#8B1E1E]/5 border border-[#E0C5A2] rounded sm:rounded-md md:rounded-lg">
+                          <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#8B1E1E]" />
+                          <span className={`${montserrat.className} text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#3C2A25]`}>
                             {guest.allowedGuests} {guest.allowedGuests === 1 ? 'Guest' : 'Guests'}
                           </span>
                         </div>
 
                         {/* Table badge */}
-                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-[#C44569]/5 border border-[#C44569]/40 sm:border-2 rounded sm:rounded-md md:rounded-lg">
-                          <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#C44569]" />
-                          <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-semibold sm:font-bold text-[#C44569]`}>
+                        <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-[#8B1E1E]/5 border border-[#E0C5A2] sm:border-2 rounded sm:rounded-md md:rounded-lg">
+                          <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#8B1E1E]" />
+                          <span className={`${montserrat.className} text-[9px] sm:text-[10px] md:text-xs font-semibold sm:font-bold text-[#3C2A25]`}>
                             {guest.tableNumber && guest.tableNumber.trim() !== "" ? (
                               <>Table {guest.tableNumber}</>
                             ) : (
-                              <span className="text-[#C44569]/60 font-medium">Not Assigned</span>
+                              <span className="text-[#5A3A32]/70 font-medium">Not Assigned</span>
                             )}
                           </span>
                         </div>
@@ -356,7 +352,7 @@ export function BookOfGuests() {
 
                       {/* Message - Mobile Optimized */}
                       {guest.message && guest.message.trim() !== "" && (
-                        <div className="relative mb-1.5 sm:mb-2.5 md:mb-3 p-2 sm:p-3 md:p-5 bg-white rounded sm:rounded-lg md:rounded-2xl border border-[#C44569]/30 shadow-sm overflow-hidden">
+                        <div className="relative mb-1.5 sm:mb-2.5 md:mb-3 p-2 sm:p-3 md:p-5 bg-white rounded sm:rounded-lg md:rounded-2xl border border-[#E0C5A2] shadow-sm overflow-hidden">
                           {/* Decorative corner elements - smaller on mobile */}
                           <div className="absolute top-0 left-0 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 opacity-[0.08]">
                             <svg viewBox="0 0 100 100" className="text-[#C44569]" fill="currentColor">
@@ -370,14 +366,14 @@ export function BookOfGuests() {
                           </div>
                           
                           {/* Opening quote - smaller on mobile */}
-                          <div className="absolute top-1 left-1 sm:top-1.5 sm:left-1.5 md:top-2 md:left-2 text-[#C44569]/25">
+                          <div className="absolute top-1 left-1 sm:top-1.5 sm:left-1.5 md:top-2 md:left-2 text-[#8B1E1E]/20">
                             <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
                             </svg>
                           </div>
                           
                           {/* Closing quote - smaller on mobile */}
-                          <div className="absolute bottom-1 right-1 sm:bottom-1.5 sm:right-1.5 md:bottom-2 md:right-2 text-[#C44569]/25">
+                          <div className="absolute bottom-1 right-1 sm:bottom-1.5 sm:right-1.5 md:bottom-2 md:right-2 text-[#8B1E1E]/20">
                             <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M18 7h-3l-2 4v6h6v-6h-3zm-8 0H7l-2 4v6h6v-6h-3z" />
                             </svg>
@@ -385,29 +381,29 @@ export function BookOfGuests() {
 
                           {/* Message content */}
                           <div className="relative px-0.5 sm:px-1">
-                            <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-base text-[#C44569] leading-tight sm:leading-relaxed italic font-medium`}>
+                            <p className={`${montserrat.className} text-[10px] sm:text-xs md:text-base text-[#3C2A25] leading-tight sm:leading-relaxed italic font-medium`}>
                               {guest.message}
                             </p>
                           </div>
 
                           {/* Elegant border accent - smaller on mobile */}
-                          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 sm:w-0.5 md:w-1 h-8 sm:h-12 md:h-16 bg-gradient-to-b from-transparent via-[#C44569] to-transparent rounded-r-full" />
+                          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 sm:w-0.5 md:w-1 h-8 sm:h-12 md:h-16 bg-gradient-to-b from-transparent via-[#F3C66C] to-transparent rounded-r-full" />
                         </div>
                       )}
 
                       {/* Companions - Mobile Optimized */}
                       {guest.companions && guest.companions.length > 0 && (
-                        <div className="pt-1.5 sm:pt-2 md:pt-2.5 border-t border-[#C44569]/20">
+                        <div className="pt-1.5 sm:pt-2 md:pt-2.5 border-t border-[#E0C5A2]/70">
                           <div className="flex items-center gap-1 mb-1 sm:mb-1.5">
-                            <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#C44569]" />
-                            <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#C44569]`}>Companions</span>
+                            <Users className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 text-[#8B1E1E]" />
+                            <span className={`${montserrat.className} text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#3C2A25]`}>Companions</span>
                           </div>
                           <div className="flex flex-wrap gap-1 sm:gap-1.5">
                             {guest.companions.map((companion, idx) => (
-                              <div key={idx} className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-white border border-[#C44569]/30 rounded sm:rounded-md md:rounded-lg hover:border-[#C44569]/50 transition-colors">
-                                <span className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs font-medium text-[#C44569] whitespace-nowrap`}>{companion.name}</span>
+                              <div key={idx} className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1 bg-white border border-[#E0C5A2] rounded sm:rounded-md md:rounded-lg hover:border-[#F3C66C]/80 transition-colors">
+                                <span className={`${montserrat.className} text-[9px] sm:text-[10px] md:text-xs font-medium text-[#3C2A25] whitespace-nowrap`}>{companion.name}</span>
                                 {companion.relationship && companion.relationship.trim() !== "" && (
-                                  <span className={`${cormorant.className} text-[8px] sm:text-[9px] md:text-[10px] text-[#C44569] bg-[#C44569]/10 px-1.5 sm:px-2 py-0.5 rounded-full font-medium border border-[#C44569]/20 whitespace-nowrap`}>
+                                  <span className={`${montserrat.className} text-[8px] sm:text-[9px] md:text-[10px] text-[#8B1E1E] bg-[#F3C66C]/15 px-1.5 sm:px-2 py-0.5 rounded-full font-medium border border-[#F3C66C]/40 whitespace-nowrap`}>
                                     {companion.relationship}
                                   </span>
                                 )}
@@ -418,9 +414,9 @@ export function BookOfGuests() {
                       )}
 
                       {/* Footer - Mobile Optimized */}
-                      <div className="flex items-center gap-1 pt-1.5 sm:pt-2 md:pt-2.5 mt-1.5 sm:mt-2 md:mt-2.5 border-t border-[#C44569]/20">
-                        <Calendar className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#C44569]/60" />
-                        <span className={`${cormorant.className} text-[8px] sm:text-[9px] md:text-[10px] text-[#C44569]/70`}>
+                      <div className="flex items-center gap-1 pt-1.5 sm:pt-2 md:pt-2.5 mt-1.5 sm:mt-2 md:mt-2.5 border-t border-[#E0C5A2]/70">
+                        <Calendar className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#8B1E1E]/70" />
+                        <span className={`${montserrat.className} text-[8px] sm:text-[9px] md:text-[10px] text-[#5A3A32]/80`}>
                           Confirmed {formatDate(guest.updatedAt)}
                         </span>
                       </div>
@@ -435,7 +431,7 @@ export function BookOfGuests() {
               <div className="flex justify-center mt-4 sm:mt-6 md:mt-8">
                 <button
                   onClick={() => setShowAllGuests(true)}
-                  className={`${cormorant.className} px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 bg-[#C44569] backdrop-blur-md border-2 border-[#C44569] rounded-lg sm:rounded-xl text-white font-semibold text-sm sm:text-base md:text-lg hover:bg-[#a63a59] hover:border-[#a63a59] transition-all duration-300 shadow-md hover:shadow-lg`}
+                  className={`${montserrat.className} px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-[#F3C66C] to-[#D4A84B] backdrop-blur-md border border-[#F3C66C]/80 rounded-full text-[#43201B] font-medium text-sm sm:text-base md:text-lg tracking-[0.16em] uppercase hover:from-[#D4A84B] hover:to-[#F3C66C] transition-all duration-300 shadow-[0_10px_26px_rgba(0,0,0,0.45)] hover:shadow-[0_14px_32px_rgba(0,0,0,0.6)]`}
                 >
                   View More ({confirmedGuests.length - 5} more)
                 </button>
