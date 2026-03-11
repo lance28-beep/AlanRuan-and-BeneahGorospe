@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/content/site"
 
 interface LandingSectionProps {
   onOpenInvitation: () => void
@@ -191,8 +192,9 @@ export default function LandingSection({ onOpenInvitation }: LandingSectionProps
           May 9, 2026
         </p>
         <p className="text-[#FCEFDD]/90 text-sm sm:text-base md:text-xl tracking-wide mb-8 sm:mb-10">
-          New York City
+          {siteConfig.ceremony.location} <br /> {siteConfig.ceremony.address}
         </p>
+
         
         {/* Countdown Timer */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10">

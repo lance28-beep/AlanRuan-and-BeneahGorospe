@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/content/site"
 
 export function Hero() {
   return (
@@ -255,9 +256,11 @@ export function Hero() {
               }}
             >
               New York City
+
             </p>
             <p className="text-[0.65rem] sm:text-[0.7rem] tracking-[0.12em] uppercase">
-              venue details to follow
+            {siteConfig.ceremony.location} <br /> {siteConfig.ceremony.address}
+
             </p>
           </div>
 
